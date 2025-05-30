@@ -14,7 +14,7 @@ export const experiences = [
   {
     id: 3,
     title: "Jr. Programmer",
-    company: "Godspeed Games",
+    company: "Godspeed",
     duration: "(Feb 2023 - Sept 2023)"
   }
 ]

@@ -1,14 +1,10 @@
 export const skillsData = [
-  'C',
-  'C++',
-  'C#',
-  'Python',
   'Java',
   'HTML',
   'CSS',
   'Javascript',
   'Typescript',
-  
+
   'MongoDB',
   'React',
   'Graphql',
@@ -16,14 +12,11 @@ export const skillsData = [
   'Bootstrap',
   'Tailwind',
   'MaterialUI',
-  
-  'Unity',
-  
+
   'Firebase',
   'Git',
 
   'Figma',
-  'Blender',
 ]
 
 // Choose your skills from below. Make sure it's in the same format and spelled correctly.
@@ -41,4 +34,17 @@ export const skillsData = [
   Dart
   Canva
   Premiere Pro
+
+
+
+
+
+  'C',
+  'C++',
+  'C#',
+  'Python',
+
+  'Unity',
+
+  'Blender',
 */

@@ -14,17 +14,9 @@ export default function About() {
                     <p className="font-medium mb-5 text-[#16f2b3] text-xl uppercase">
                         Who I am?
                     </p>
-                    <p className="text-gray-200 text-sm lg:text-lg"
-                        dangerouslySetInnerHTML={{
-                            __html: personalData.description.replace(
-                                '10K+ downloads',
-                                `<a href="https://play.google.com/store/apps/details?id=com.playhobo.idlecryptominer" target="_blank" style="color: #16f2b3; font-weight: bold1; font-style: italic1; text-decoration: underline;">10K+ downloads</a>`
-                            ).replace(
-                                '100K+ downloads',
-                                `<a href="https://play.google.com/store/apps/details?id=com.blackwonder3d.thunderworld" target="_blank" style="color: #16f2b3; font-weight: bold1; font-style: italic1; text-decoration: underline;">100K+ downloads</a>`
-                            )
-                        }}
-                    />
+                    <p className="text-gray-200 text-sm lg:text-lg">
+                        {personalData.description.split('\n').map((line, index) => (<span key={index} className="block mb-1">{line}</span>))}
+                    </p>
                 </div>
                 <div className="flex justify-center items-center order-1 lg:order-2">
                     <img

@@ -131,8 +131,8 @@ export default function Hero(): JSX.Element {
                             <div className="ml-4 lg:ml-8 mr-2">
                                 <span className=" text-white">skills:</span>
                                 <span className="text-gray-400">{`['`}</span>
-                                
-                                <span className="text-amber-300">Spring Boot</span>
+
+                                <span className="text-amber-300">MERN</span>
                                 <span className="text-gray-400">{"', '"}</span>
                                
                                 <span className="text-amber-300">SQL</span>
@@ -141,31 +141,11 @@ export default function Hero(): JSX.Element {
                                 <span className="text-amber-300">Postgresql</span>
                                 <span className="text-gray-400">{"', '"}</span>
                                
-                                <span className="text-amber-300">MERN</span>
-                                <span className="text-gray-400">{"', '"}</span>
-
-                                {/* <span className="text-amber-300">MongoDB</span>
-                                <span className="text-gray-400">{"', '"}</span>
-                                <span className="text-amber-300">Express</span>
-                                <span className="text-gray-400">{"', '"}</span>
-                                <span className="text-amber-300">React</span>
-                                <span className="text-gray-400">{"', '"}</span>
-                                <span className="text-amber-300">Node Js</span> */}
-
-                                {/* <span className="text-gray-400">{"', '"}</span>
-                                <span className="text-amber-300">Bootstrap</span> */}
-                               
-                                <span className="text-amber-300">React Native</span>
-                                <span className="text-gray-400">{"', '"}</span>
-                               
                                 <span className="text-amber-300">GraphQL</span>
                                 <span className="text-gray-400">{"', '"}</span>
                                
                                 <span className="text-amber-300">PWA</span>
                                 <span className="text-gray-400">{"', '"}</span>
-
-                                {/* <span className="text-amber-300">Android Studio</span> */}
-                                {/* <span className="text-gray-400">{"', '"}</span> */}
 
                                 <span className="text-amber-300">Websockets</span>
                                 <span className="text-gray-400">{"', '"}</span>
@@ -173,40 +153,16 @@ export default function Hero(): JSX.Element {
                                 <span className="text-amber-300">Azure</span>
                                 <span className="text-gray-400">{"', '"}</span>
 
-                                <span className="text-amber-300">Unity</span>
-                                <span className="text-gray-400">{"', '"}</span>
-
-                                <span className="text-amber-300">AR</span>
-                                <span className="text-gray-400">{"', '"}</span>
-
-                                <span className="text-amber-300">VR</span>
-                                <span className="text-gray-400">{"', '"}</span>
-
-                                {/* <span className="text-amber-300">Netcode</span> */}
-                                {/* <span className="text-gray-400">{"', '"}</span> */}
-
-                                {/* <span className="text-amber-300">Photon</span> */}
-                                {/* <span className="text-gray-400">{"', '"}</span> */}
-
-                                {/* <span className="text-amber-300">Mirror</span> */}
-                                {/* <span className="text-gray-400">{"', '"}</span> */}
-
-                                {/* <span className="text-amber-300">Fishnet</span> */}
-                                {/* <span className="text-gray-400">{"', '"}</span> */}
-                               
-                                <span className="text-amber-300">DOTS</span>
-                                <span className="text-gray-400">{"', '"}</span>
-
                                 <span className="text-amber-300">Git</span>
-                                {/* <span className="text-gray-400">{"', '"}</span> */}
+                                <span className="text-gray-400">{"', '"}</span>
 
-                                {/* <span className="text-amber-300">Github</span> */}
-                                {/* <span className="text-gray-400">{"', '"}</span> */}
+                                <span className="text-amber-300">Github</span>
+                                <span className="text-gray-400">{"', '"}</span>
 
-                                {/* <span className="text-amber-300">Gitlab</span> */}
-                                {/* <span className="text-gray-400">{"', '"}</span> */}
+                                <span className="text-amber-300">Gitlab</span>
+                                <span className="text-gray-400">{"', '"}</span>
 
-                                {/* <span className="text-amber-300">Figma</span> */}
+                                <span className="text-amber-300">Figma</span>
 
                                 <span className="text-gray-400">{"'],"}</span>
                             </div>

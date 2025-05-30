@@ -2,8 +2,8 @@ export const projectsData = [
     {
         id: 1,
         name: 'Consent Management',
-        description: " Developed a full-stack Consent Management System compliant with India’s DPDP Act, 2023. Implemented features for different roles: Data Principal (User): Manages personal data, providing consent and requests for access, correction, and deletion. Data Fiduciary (Company/App): Collects and processes data, ensuring usage as per user consent, and implements data security. Consent Manager: A central system to manage consents across multiple platforms. Data Protection Board: Government body ensuring compliance, handling breach reports, and conducting investigations.",
-        tools: ['Spring Boot', 'ReactJS', 'PostgreSQL', 'JWT', 'REST APIs', 'Vercel', 'Render', 'Supabase'],
+        description: `Developed a role-based consent platform aligned with India's DPDP Act, 2023 using ReactJS. Built responsive, accessible UIs using Bootstrap, and custom React components.- Used React Router for dynamic routing and role-based access control across four user types (User, Company, Consent Manager, Government). Integrated React Query for efficient data fetching, caching, and synchronization with backend APIs. Optimized component performance using lazy loading, code-splitting, and state management with Redux Toolkit.`,
+        tools: ['Spring Boot', 'ReactJS', 'PostgreSQL', 'REST APIs', 'BootStrap', 'HTML', 'CSS', 'JavaScript'],
         role: 'Full Stack Developer',
         code: 'Private',
         demo: '',
@@ -11,20 +11,19 @@ export const projectsData = [
     {
         id: 2,
         name: 'Wealthwise',
-        description: 'An expense tracking app built using the MERN stack. Features include interactive charts, PDF/Excel report downloads, financial goal tracking, and personalized insights based on income and savings. Users can manage their profiles for a tailored experience, making it easier to visualize and optimize their financial health.',
-        tools: ['MongoDB', 'Express', 'React', 'Node Js', 'JWT', 'Charts.js', 'Graph.js', 'PDFMake', 'ExcelJS', 'Bootstrap', 'CSS', 'JavaScript'],
+        description: `Developed a personal finance management app using the MERN stack with secure JWT-based authentication. Implemented dynamic charts using Chart.js and Graph.js to visualize user spending patterns and trends.– Enabled PDF and Excel export using PDFMake and ExcelJS; delivered personalized financial summaries via RESTful APIs. Focused on responsive UI, optimized React performance, and modular backend architecture with Express.js and MongoDB.`,
+        tools: ['MongoDB', 'Express', 'React', 'Node Js', 'JWT', 'Charts.js', 'Graph.js', 'PDFMake', 'ExcelJS', 'Bootstrap', 'HTML', 'CSS', 'JavaScript'],
         code: 'Private',
         role: 'Full Stack Developer',
         demo: '',
     },
     {
         id: 3,
-        name: 'shopARound',
-        description: 'An AR-based shopping app it merges virtual and physical shopping through the Metaverse, allowing remote shopping for users and helping businesses expand their reach. Multiple users can connect and interact within the same virtual shopping environment, with a proximity-based voice chat feature enabling real-time communication based on user location',
-        tools: ['Unty', 'C#', 'Photon Pun 2', "Photon Voice", "Azure", "Facebook/Meta API", "AR"],
+        name: 'PocketMoney',
+        description: `Developed a job-matching platform for students to discover part-time and internship opportunities across domains. Built with React and Firebase for real-time database operations, user authentication, and job listing workflows. Implemented seeker-provider messaging via SMTP.js and dynamic job filters for role, location, and domain preferences. Focused on responsive UI/UX with form validations, route-based navigation, and optimized component architecture.`,
+        tools: ['React', 'SMTP JS', "Firebase", 'BootStrap', 'HTML', 'CSS', 'JavaScript'],
         role: 'Full Stack Developer',
         code: 'Private',
         demo: '',
     },
-    
 ];
