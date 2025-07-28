@@ -66,6 +66,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                         <span className="text-cyan-400">{' ' + project.description}</span>
                         <span className="text-gray-400">,</span>
                     </div>
+                    {project.demo && <div className="ml-4 lg:ml-8 mr-2 cursor-pointer hover:underline hover:decoration-cyan-300"
+                        onClick={() => window.open(project.demo, '_blank')}>
+                        <span className="text-white">Demo:</span>
+                        <span className="text-cyan-400">{' ' + project.demo}</span>
+                        <span className="text-gray-400">,</span>
+                    </div>}
                     <div className="ml-4 lg:ml-8 mr-2">
                         <span className="text-white">Code:</span>
                         <span className="text-cyan-400">{' ' + project.code}</span>
