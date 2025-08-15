@@ -15,7 +15,10 @@ type ProjectCardProps = {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
     return (
-        <div className="from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37] w-full">
+        <div className="from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37] w-full"
+            onClick={() => {
+                if (project.demo) window.open(project.demo, '_blank')
+            }}>
             <div className="flex flex-row">
                 <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-pink-500 to-violet-600"></div>
                 <div className="h-[1px] w-full bg-gradient-to-r from-violet-600 to-transparent"></div>
