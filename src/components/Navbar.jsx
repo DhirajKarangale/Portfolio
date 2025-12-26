@@ -3,14 +3,14 @@ import {
   Home,
   User,
   Code,
-  Briefcase,
-  BadgeCheck,
   Mail,
   Sun,
   Moon,
   Library,
   Github,
   Linkedin,
+  Package,
+  BriefcaseBusiness,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -19,8 +19,8 @@ const navItems = [
   { name: "Home", href: "#hero", icon: Home },
   { name: "About", href: "#about", icon: User },
   { name: "Skills", href: "#skills", icon: Code },
-  { name: "Projects", href: "#projects", icon: Briefcase },
-  { name: "Experience", href: "#experience", icon: BadgeCheck },
+  { name: "Projects", href: "#projects", icon: Package },
+  { name: "Experience", href: "#experience", icon: BriefcaseBusiness },
   { name: "Contact", href: "#contact", icon: Mail },
 ];
 

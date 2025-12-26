@@ -187,7 +187,7 @@ const projects = [
     description:
       "Consent Management is a role-based web platform built to model and enforce data consent workflows aligned with India’s Digital Personal Data Protection (DPDP) Act, 2023. The system demonstrates how regulated consent flows can be implemented with clarity, security, and scalability in mind.\n\nThe application supports four distinct user roles — User, Company, Consent Manager, and Government — each with dedicated interfaces and permissions. Role-based routing and access control ensure that users can only view and act on data relevant to their responsibilities.\n\nBuilt with React, the platform emphasizes performance and maintainability through lazy loading, code splitting, and structured state management. Data fetching and synchronization are handled efficiently using React Query, resulting in a responsive, compliant, and production-style consent management system.",
     image: "/projects/consentmanagement_logo.png",
-    gif: "/projects/consentmanagement_gif.gif",
+    gif: "/projects/consentmanagement_logo.png",
     tags: [
       "React",
       "Role-Based Access",
