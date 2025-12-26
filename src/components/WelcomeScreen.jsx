@@ -125,7 +125,7 @@ const WelcomeScreen = ({ onWelcomeComplete }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-hidden">
+    <div className="fixed inset-0 z-50 overflow-hidden select-none">
       {/* Welcome Screen */}
       <motion.div
         className="h-full w-full flex items-center justify-center p-4"
