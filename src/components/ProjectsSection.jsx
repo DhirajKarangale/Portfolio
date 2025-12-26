@@ -258,8 +258,8 @@ export const ProjectsSection = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 border ${activeFilter === category
-                    ? "bg-primary text-primary-foreground border-primary"
-                    : "bg-background text-muted-foreground border-border hover:border-primary hover:text-primary"
+                  ? "bg-primary text-primary-foreground border-primary"
+                  : "bg-background text-muted-foreground border-border hover:border-primary hover:text-primary"
                   }`}
               >
                 {category}
@@ -302,8 +302,8 @@ export const ProjectsSection = () => {
                     {/* Status Badge */}
                     <div className="absolute top-3 right-3">
                       <div className={`px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm ${project.status === "Live"
-                          ? "bg-emerald-500/20 text-emerald-600 border border-emerald-500/30"
-                          : "bg-amber-500/20 text-amber-600 border border-amber-500/30"
+                        ? "bg-emerald-500/20 text-emerald-600 border border-emerald-500/30"
+                        : "bg-amber-500/20 text-amber-600 border border-amber-500/30"
                         }`}>
                         {project.status}
                       </div>
@@ -340,8 +340,8 @@ export const ProjectsSection = () => {
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                         className={`p-3 rounded-full backdrop-blur-sm border transition-all duration-300 ${project.githubUrl === "#"
-                            ? "bg-gray-500/50 text-gray-300 border-gray-500/30 cursor-not-allowed"
-                            : "bg-white/20 text-white border-white/30 hover:bg-white/30"
+                          ? "bg-gray-500/50 text-gray-300 border-gray-500/30 cursor-not-allowed"
+                          : "bg-white/20 text-white border-white/30 hover:bg-white/30"
                           }`}
                         onClick={(e) => project.githubUrl === "#" && e.preventDefault()}
                       >
@@ -402,8 +402,8 @@ export const ProjectsSection = () => {
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                         className={`flex-1 inline-flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 ${project.demoUrl === "#"
-                            ? "bg-muted text-muted-foreground cursor-not-allowed border border-border"
-                            : "bg-primary text-primary-foreground hover:bg-primary/90"
+                          ? "bg-muted text-muted-foreground cursor-not-allowed border border-border"
+                          : "bg-primary text-primary-foreground hover:bg-primary/90"
                           }`}
                         onClick={(e) => project.demoUrl === "#" && e.preventDefault()}
                       >
@@ -418,8 +418,8 @@ export const ProjectsSection = () => {
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                         className={`inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg text-sm font-medium border transition-all duration-300 ${project.githubUrl === "#"
-                            ? "bg-muted text-muted-foreground cursor-not-allowed border-border"
-                            : "bg-background text-foreground border-border hover:border-primary hover:bg-primary/5"
+                          ? "bg-muted text-muted-foreground cursor-not-allowed border-border"
+                          : "bg-background text-foreground border-border hover:border-primary hover:bg-primary/5"
                           }`}
                         onClick={(e) => project.githubUrl === "#" && e.preventDefault()}
                       >
@@ -451,8 +451,8 @@ export const ProjectsSection = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className={`inline-flex items-center gap-3 px-8 py-4 rounded-2xl font-medium transition-all duration-300 ${showAll
-                  ? "bg-muted text-foreground border border-border"
-                  : "bg-primary text-primary-foreground hover:bg-primary/90"
+                ? "bg-muted text-foreground border border-border"
+                : "bg-primary text-primary-foreground hover:bg-primary/90"
                 }`}
             >
               {showAll ? (
@@ -470,6 +470,8 @@ export const ProjectsSection = () => {
           </motion.div>
         )}
 
+
+        {/* Remove this */}
         {/* Simple CTA */}
         <motion.div
           className="text-center mt-20"
@@ -519,8 +521,10 @@ export const ProjectsSection = () => {
             </div>
           </div>
         </motion.div>
+
       </div>
 
+      {/* Remove this */}
       {/* Video Modal */}
       <AnimatePresence>
 
@@ -638,6 +642,7 @@ export const ProjectsSection = () => {
 
 
       </AnimatePresence>
+
     </section>
   );
 };
