@@ -1,7 +1,7 @@
 import {
   Linkedin,
   Code2,
-  Share2, 
+  Share2,
   Mail,
   MapPin,
   Phone,
@@ -21,7 +21,7 @@ export const ContactSection = () => {
             Get In Touch
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
-            Have a project in mind or just want to say hi? My inbox is always open.
+            Ready to build something cool? Drop a message and let's make it real.
           </p>
         </div>
 
