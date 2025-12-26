@@ -16,7 +16,7 @@ export default function ProjectDetails({ open, setOpen, project }) {
   }, [open]);
 
   return (
-    <AnimatePresence>
+    <AnimatePresence mode="sync">
       {open && (
         <>
           {/* Overlay */}

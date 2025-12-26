@@ -1,8 +1,7 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
-import { useInView } from "framer-motion";
-import { Quote, Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 
 export const ExperienceSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -10,30 +9,36 @@ export const ExperienceSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
-  const testimonials = [
+  const experiences = [
     {
       id: 1,
-      name: "Alex Johnson",
-      role: "Product Director at TechCorp",
-      content: `Working with Sahil was seamless from day one. Not only did they deliver a full-stack solution ahead of schedule, but they also communicated clearly throughout the project. It's rare to find a developer who understands both the tech and the business side so well`,
-      rating: 5,
-      image: "/testimonials/alex-johnson.png"
+      company: "Infosys",
+      role: "Specialist Programmer — Full-Stack Engineer",
+      duration: "Aug 2024 - Present",
+      location: "India",
+      highlights: [
+        "Owned features end-to-end from requirements to deployment",
+        "Built REST APIs with 99.9% uptime",
+        "Reduced backend response time by ~25% using Redis caching",
+        "Improved frontend load time from 3.5s → 2.1s",
+      ],
+      tech: ["React", "Node.js", "Spring Boot", "PostgreSQL", "Redis"],
+      logo: "/experience/infosys.jpg"
     },
     {
       id: 2,
-      name: "Maria Chen",
-      role: "Senior UX Designer at DesignHub",
-      content: `I've reviewed hundreds of portfolios, and his work is truly exceptional. Tway the animations guide attention while maintaining performance is masterful. The gradient elements add depth without overwhelming.`,
-      rating: 5,
-      image: "/testimonials/maria-chen.png"
-    },
-    {
-      id: 3,
-      name: "David Wilson",
-      role: "CTO at Startup Ventures",
-      content: `From wireframes to deployment, Sahil owned the entire stack with confidence and creativity. The final product is fast, reliable, and looks incredible. I wouldn't hesitate to work with them again.`,
-      rating: 5,
-      image: "/testimonials/David Wilson.png"
+      company: "SaralTech",
+      role: "Junior Programmer — Frontend Developer",
+      duration: "Jan 2024 - Jun 2024",
+      location: "Remote",
+      highlights: [
+        "Built responsive, multi-user UIs",
+        "Integrated Google OAuth 2.0",
+        "Implemented WebSocket-driven live updates",
+        "Reduced bandwidth usage by ~35%",
+      ],
+      tech: ["React", "Tailwind", "WebSockets", "OAuth"],
+      logo: "/experience/saraltech.jpg"
     },
   ];
 
@@ -54,25 +59,30 @@ export const ExperienceSection = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const totalPages = Math.ceil(testimonials.length / itemsPerPage);
+  const totalPages = Math.ceil(experiences.length / itemsPerPage);
 
-  const nextTestimonial = () => {
+  const nextExperience = () => {
     setCurrentIndex((prev) => (prev + 1) % totalPages);
   };
 
-  const prevTestimonial = () => {
+  const prevExperience = () => {
     setCurrentIndex((prev) => (prev - 1 + totalPages) % totalPages);
   };
 
-  const visibleTestimonials = testimonials.slice(
+  const visibleExperiences = experiences.slice(
     currentIndex * itemsPerPage,
     (currentIndex + 1) * itemsPerPage
   );
 
-  // Fill empty slots on last page if needed
-  while (visibleTestimonials.length < itemsPerPage) {
-    visibleTestimonials.push(testimonials[visibleTestimonials.length]);
-  }
+  // while (visibleExperiences.length < itemsPerPage) {
+  //   visibleExperiences.push(experiences[visibleExperiences.length]);
+  // }
+
+  // while (visibleExperiences.length < itemsPerPage) {
+  //   visibleExperiences.push(
+  //     experiences[visibleExperiences.length % experiences.length]
+  //   );
+  // }
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -152,67 +162,85 @@ export const ExperienceSection = () => {
               transition={{ delay: 0.4 }}
             >
               <Star className="h-3 w-3 sm:h-4 sm:w-4" />
-              Client Feedback
+              Professional Experience
               <Star className="h-3 w-3 sm:h-4 sm:w-4" />
             </motion.div>
             <motion.h2
               className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight"
               variants={itemVariants}
             >
-              What People Say
+              Experience That Ships to Production
             </motion.h2>
             <motion.p
               className="text-base sm:text-lg text-muted-foreground mt-3 sm:mt-4 max-w-2xl mx-auto"
               variants={itemVariants}
             >
-              What Clients Will Say About Working with Me.
+              Real-world engineering across frontend, backend, and systems.
             </motion.p>
           </motion.div>
 
           <div className="relative">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-              {visibleTestimonials.map((testimonial) => (
+              {visibleExperiences.map((experience) => (
                 <motion.div
-                  key={testimonial.id}
+                  key={experience.id}
                   className="bg-background/80 backdrop-blur-sm border rounded-xl p-6 sm:p-8 shadow-sm hover:shadow-md transition-all h-full flex flex-col group"
                   variants={itemVariants}
                   whileHover={{ y: -5 }}
                 >
-                  <div className="flex flex-col h-full">
-                    <Quote className="h-6 w-6 sm:h-8 sm:w-8 text-primary/30 mb-3 sm:mb-4 group-hover:text-primary/50 transition-colors" />
-
-                    <p className="text-base sm:text-lg text-muted-foreground mb-4 sm:mb-6 flex-1">
-                      "{testimonial.content}"
+                  <div className="relative inline-block mb-3">
+                    <p className="font-semibold text-left">
+                      {experience.role}
                     </p>
+                    <span className="absolute left-0 -bottom-1 w-full h-[2px]
+                   bg-gradient-to-r from-primary to-purple-500 rounded-full" />
+                  </div>
+
+                  <div className="flex flex-col h-full">
+                    <motion.div className="text-base sm:text-lg text-muted-foreground my-2 flex-1">
+                      <motion.ul className="text-sm text-left text-muted-foreground space-y-2 mt-2">
+                        {experience.highlights.map((point, i) => (
+                          <li key={i} className="flex gap-2">
+                            <span className="text-primary">▸</span>
+                            {point}
+                          </li>
+                        ))}
+                      </motion.ul>
+                    </motion.div>
 
                     <div className="mt-auto">
-                      <div className="flex mb-2">
-                        {[...Array(5)].map((_, i) => (
-                          <Star
-                            key={i}
-                            className={`h-4 w-4 sm:h-5 sm:w-5 ${i < testimonial.rating ? 'text-yellow-400 fill-yellow-400' : 'text-muted-foreground/30'}`}
-                          />
+                      <motion.div className="mt-auto pt-4 flex flex-wrap gap-2 mb-2">
+                        {experience.tech.map((t) => (
+                          <span
+                            key={t}
+                            className="text-xs px-2 py-1 rounded-md bg-primary/10 border border-primary/20"
+                          >
+                            {t}
+                          </span>
                         ))}
-                      </div>
+                      </motion.div>
 
                       <div className="flex items-center gap-3 sm:gap-4 mt-3 sm:mt-4">
                         <div className="relative h-10 w-10 sm:h-12 sm:w-12 rounded-full border-2 border-primary/20 group-hover:border-primary/50 overflow-hidden transition-all">
-                          {testimonial.image ? (
+                          {experience.logo ? (
                             <img
-                              src={testimonial.image}
-                              alt={testimonial.name}
+                              src={experience.logo}
+                              alt={experience.company}
                               className="w-full h-full object-cover"
                               loading="lazy"
                             />
                           ) : (
                             <div className="w-full h-full bg-primary/10 flex items-center justify-center text-primary/50">
-                              {testimonial.name.charAt(0)}
+                              {experience.company}
                             </div>
                           )}
                         </div>
                         <div>
-                          <p className="font-medium text-sm sm:text-base">{testimonial.name}</p>
-                          <p className="text-xs sm:text-sm text-muted-foreground">{testimonial.role}</p>
+                          <p className="font-medium text-sm sm:text-base">{experience.company}</p>
+                          <p className="text-xs sm:text-sm text-muted-foreground">{experience.location}</p>
+                        </div>
+                        <div>
+                          <p className="font-normal text-sm">{experience.duration}</p>
                         </div>
                       </div>
                     </div>
@@ -225,17 +253,17 @@ export const ExperienceSection = () => {
             {totalPages > 1 && (
               <>
                 <button
-                  onClick={prevTestimonial}
+                  onClick={prevExperience}
                   className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 sm:-translate-x-4 p-2 sm:p-3 rounded-full border border-muted-foreground/20 hover:border-primary/50 bg-background/80 backdrop-blur-sm transition-all shadow-lg z-10 hidden sm:flex items-center justify-center hover:scale-110"
-                  aria-label="Previous testimonial"
+                  aria-label="Previous experience"
                 >
                   <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" />
                 </button>
 
                 <button
-                  onClick={nextTestimonial}
+                  onClick={nextExperience}
                   className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 sm:translate-x-4 p-2 sm:p-3 rounded-full border border-muted-foreground/20 hover:border-primary/50 bg-background/80 backdrop-blur-sm transition-all shadow-lg z-10 hidden sm:flex items-center justify-center hover:scale-110"
-                  aria-label="Next testimonial"
+                  aria-label="Next experience"
                 >
                   <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6" />
                 </button>
@@ -247,9 +275,9 @@ export const ExperienceSection = () => {
           {totalPages > 1 && (
             <div className="flex justify-center gap-3 sm:gap-4 sm:hidden">
               <button
-                onClick={prevTestimonial}
+                onClick={prevExperience}
                 className="p-1 sm:p-2 rounded-full border border-muted-foreground/20 hover:border-primary/50 bg-background/80 backdrop-blur-sm transition-all hover:scale-110"
-                aria-label="Previous testimonial"
+                aria-label="Previous experience"
               >
                 <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5" />
               </button>
@@ -260,15 +288,15 @@ export const ExperienceSection = () => {
                     key={index}
                     onClick={() => setCurrentIndex(index)}
                     className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all ${currentIndex === index ? 'bg-primary' : 'bg-muted-foreground/20'}`}
-                    aria-label={`Go to testimonial ${index + 1}`}
+                    aria-label={`Go to experience ${index + 1}`}
                   />
                 ))}
               </div>
 
               <button
-                onClick={nextTestimonial}
+                onClick={nextExperience}
                 className="p-1 sm:p-2 rounded-full border border-muted-foreground/20 hover:border-primary/50 bg-background/80 backdrop-blur-sm transition-all hover:scale-110"
-                aria-label="Next testimonial"
+                aria-label="Next experience"
               >
                 <ChevronRight className="h-4 w-4 sm:h-5" />
               </button>
