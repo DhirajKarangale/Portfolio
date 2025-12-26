@@ -470,64 +470,9 @@ export const ProjectsSection = () => {
           </motion.div>
         )}
 
-
-        {/* Remove this */}
-        {/* Simple CTA */}
-        <motion.div
-          className="text-center mt-20"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <div className="bg-background border border-border rounded-2xl p-12 max-w-4xl mx-auto">
-            <motion.div
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6"
-            >
-              <Zap className="h-4 w-4" />
-              Get In Touch
-            </motion.div>
-
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">Like what you see?</h3>
-            <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-              I'm always open to discussing new opportunities and interesting projects.
-            </p>
-
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <motion.a
-                href="#contact"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl font-medium bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
-              >
-                Contact Me
-                <ArrowRight size={18} />
-              </motion.a>
-
-              <motion.a
-                href="https://github.com/sahilmd01"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl font-medium border border-border text-foreground hover:border-primary hover:bg-primary/5 transition-all duration-300"
-              >
-                <Github size={18} />
-                View GitHub
-              </motion.a>
-            </div>
-          </div>
-        </motion.div>
-
       </div>
 
-      {/* Remove this */}
-      {/* Video Modal */}
-      <AnimatePresence>
-
+      <AnimatePresence mode="sync">
         {selectedProject && (
           <ProjectDetails
             open={!!selectedProject}
@@ -548,99 +493,6 @@ export const ProjectsSection = () => {
             }
           />
         )}
-
-        {/* {selectedVideo && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
-            onClick={handleCloseVideo}
-          >
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
-              transition={{ type: "spring", damping: 25 }}
-              className="relative bg-background rounded-2xl overflow-hidden shadow-2xl max-w-4xl w-full max-h-[80vh]"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="flex items-center justify-between p-6 border-b border-border">
-                <div>
-                  <h3 className="text-xl font-bold text-foreground">
-                    {selectedVideo.title} Demo
-                  </h3>
-                  <p className="text-muted-foreground text-sm">
-                    {selectedVideo.category}
-                  </p>
-                </div>
-                <motion.button
-                  onClick={handleCloseVideo}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  className="p-2 rounded-full hover:bg-muted transition-colors duration-200"
-                >
-                  <X size={24} />
-                </motion.button>
-              </div>
-
-              <div className="aspect-video bg-black">
-                <video
-                  ref={videoRef}
-                  src={selectedVideo.video}
-                  controls
-                  autoPlay
-                  className="w-full h-full object-contain"
-                  onEnded={handleCloseVideo}
-                >
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-
-              <div className="p-6 border-t border-border">
-                <div className="flex flex-col sm:flex-row gap-4 justify-between items-center">
-                  <p className="text-muted-foreground text-sm flex-1">
-                    Watch the demo of {selectedVideo.title} in action
-                  </p>
-                  <div className="flex gap-3">
-                    <motion.a
-                      href={selectedVideo.demoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className={`px-6 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
-                        selectedVideo.demoUrl === "#"
-                          ? "bg-muted text-muted-foreground cursor-not-allowed border border-border"
-                          : "bg-primary text-primary-foreground hover:bg-primary/90"
-                      }`}
-                      onClick={(e) => selectedVideo.demoUrl === "#" && e.preventDefault()}
-                    >
-                      Visit Live Site
-                    </motion.a>
-                    <motion.a
-                      href={selectedVideo.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className={`px-6 py-2 rounded-lg text-sm font-medium border transition-all duration-300 ${
-                        selectedVideo.githubUrl === "#"
-                          ? "bg-muted text-muted-foreground cursor-not-allowed border-border"
-                          : "bg-background text-foreground border-border hover:border-primary hover:bg-primary/5"
-                      }`}
-                      onClick={(e) => selectedVideo.githubUrl === "#" && e.preventDefault()}
-                    >
-                      View Code
-                    </motion.a>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        )} */}
-
-
       </AnimatePresence>
 
     </section>
