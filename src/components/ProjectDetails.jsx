@@ -51,59 +51,6 @@ export default function ProjectDetails({ open, setOpen, project }) {
               </button>
             </div>
 
-            {/* Demo GIF */}
-            {/* {project.gif && (
-              <div>
-                <img
-                  src={project.gif}
-                  alt={`${project.title} demo`}
-                  className="w-full rounded-xl mb-4 object-cover shadow-md"
-                />
-              </div>
-            )} */}
-
-            {/* Category + Visit Button */}
-            {/* <div className="flex justify-between items-center mb-4 text-sm text-gray-300">
-              <div className="px-3 py-1 rounded-full bg-primary/20 border border-primary/30 text-primary text-xs font-medium">
-                {project.category}
-              </div>
-
-              {project.link && (
-                <button
-                  onClick={handleVisitSite}
-                  className="px-3 py-1 text-xs rounded-md border border-white/30 
-                 bg-white/10 backdrop-blur-sm hover:bg-white/20 transition"
-                >
-                  Visit Site
-                </button>
-              )}
-            </div> */}
-
-            {/* Description → ONLY text, left aligned, scrollable */}
-            {/* <div className="text-gray-200 text-sm leading-relaxed text-left
-            overflow-y-auto pr-2 space-y-4
-            scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent
-            hover:scrollbar-thumb-white/40 transition"
-              style={{ maxHeight: "calc(85vh - 140px)" }}
-            >
-
-              <section>
-                <h4 className="text-primary font-medium mb-1">Overview</h4>
-                <p>{project.description}</p>
-              </section>
-
-              {project.highlights && (
-                <section>
-                  <h4 className="text-primary font-medium mb-1">Key Work</h4>
-                  <ul className="list-disc list-inside space-y-1">
-                    {project.highlights.map((item, idx) => (
-                      <li key={idx}>{item}</li>
-                    ))}
-                  </ul>
-                </section>
-              )}
-            </div> */}
-
             {/* Scrollable Content */}
             <div className="flex-1 overflow-y-auto pr-2 space-y-4
               scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent
