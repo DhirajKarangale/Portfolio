@@ -1,154 +1,139 @@
-import { ArrowRight, ExternalLink, Github, ChevronUp, Star, Code, ChevronDown, MoveRight, Filter, Sparkles, Award, Zap, Play, Eye, Calendar, Users, X } from "lucide-react";
 import { useState, useRef } from "react";
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import ProjectDetails from "./ProjectDetails";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, Github, ChevronUp, Star, Code, Sparkles, Play, Eye } from "lucide-react";
 
 const projects = [
   {
-    id: 8,
-    title: "GenAxis",
-    category: "AI SaaS ",
-    description: "AI saas webapp build with PERN stack and Intigrated Gemini . OPEN SOURCE ",
-    image: "/projects/project8.png",
-    video: "/projects/videos/genaxix-demo.mp4",
-    tags: ["PERN Stack", "Clerk Auth", "Google Gemini", "Clerk Billing", "OPEN SOURCE"],
-    demoUrl: "https://genaxis.vercel.app",
-    githubUrl: "https://github.com/Sahilmd01/genaxis",
-    featured: true,
-    accentColor: "from-emerald-500 to-teal-600",
-    status: "Live",
-    highlights: ["Image Generation", "Article writer", "Blog Writter", "Resume Reviewer"]
-  },
-  {
-    id: 7,
-    title: "NauraCare",
-    category: "Healthcare SaaS",
-    description: "Hospital management platform with multi-role access, patient tracking, and billing systems.",
-    image: "/projects/project7.png",
-    video: "/projects/videos/nauracare-demo.mp4",
-    tags: ["React", "Node.js", "MongoDB", "Stripe", "JWT Auth"],
-    demoUrl: "https://nauracare.vercel.app",
-    githubUrl: "https://github.com/Sahilmd01/neuracare",
-    featured: true,
-    accentColor: "from-emerald-500 to-teal-600",
-    status: "Live",
-    highlights: ["Multi-role system", "Patient management", "Payment integration"]
-  },
-  {
     id: 1,
-    title: "Vante & Co.",
-    category: "E-commerce",
-    description: "Fashion marketplace with product recommendations and seamless checkout experience.",
-    image: "/projects/project1.png",
-    video: "/projects/videos/vante-demo.mp4",
-    tags: ["React", "Node.js", "Stripe", "Redis"],
-    demoUrl: "https://e-commerce-website-4w6a.vercel.app",
-    githubUrl: "https://github.com/Sahilmd01/E-commerce-website",
+    title: "SatyaMark",
+    category: "AI Infrastructure",
+    description:
+      "SatyaMark is an open-source, multi-modal content verification infrastructure that provides real-time, explainable trust signals using LLM pipelines, RAG-based evidence retrieval, image forensics, Redis Streams, and WebSockets.",
+    image: "/projects/satyamark_logo.png",
+    gif: "/projects/satyamark_gif.gif",
+    tags: [
+      "Python",
+      "LangChain",
+      "RAG",
+      "Redis Streams",
+      "WebSockets",
+      "Node.js",
+      "PostgreSQL",
+      "React",
+      "Open Source"
+    ],
+    demoUrl: "https://satyamark.vercel.app/",
+    githubUrl: "https://github.com/DhirajKarangale/SatyaMark",
     featured: true,
-    accentColor: "from-purple-500 to-indigo-600",
+    accentColor: "from-cyan-500 to-blue-600",
     status: "Live",
-    highlights: ["Product catalog", "Shopping cart", "Payment processing"]
+    highlights: [
+      "Designed multi-stage LLM verification pipelines",
+      "Built RAG system for evidence retrieval and summarization",
+      "Implemented Redis Streams + WebSockets for live result streaming",
+      "Published production-ready React SDK to npm"
+    ]
   },
   {
     id: 2,
-    title: "Converse Pro",
-    category: "Real-time Communication",
-    description: "Chat platform with real-time messaging, media sharing, and user authentication.",
-    image: "/projects/project2.png",
-    video: "/projects/videos/converse-demo.mp4",
-    tags: ["Socket.IO", "MongoDB", "React", "WebRTC"],
-    demoUrl: "https://converse-pro-frontend.vercel.app",
-    githubUrl: "https://github.com/Sahilmd01/converse-pro",
+    title: "PDF & PPT Export",
+    category: "Developer Tooling",
+    description:
+      "A DOM-driven export engine for React dashboards that converts real rendered UI into structured multi-page PDFs and fully editable PowerPoint files instead of flat screenshots.",
+    image: "/projects/pdfppt_logo.png",
+    gif: "/projects/pdfppt_gif.gif",
+    tags: [
+      "React",
+      "jsPDF",
+      "pptxgenjs",
+      "DOM Analysis",
+      "Open Source"
+    ],
+    demoUrl: "https://pdfppt-export.vercel.app/",
+    githubUrl: "https://github.com/DhirajKarangale/pdfppt-export",
     featured: true,
-    accentColor: "from-blue-500 to-cyan-600",
+    accentColor: "from-purple-500 to-indigo-600",
     status: "Live",
-    highlights: ["Real-time chat", "Media sharing", "User authentication"]
+    highlights: [
+      "Converted live DOM layouts into structured PDF pages",
+      "Generated editable PowerPoint slides from React dashboards",
+      "Implemented smart pagination without breaking components",
+      "Designed minimal, production-ready React API"
+    ]
   },
   {
     id: 3,
-    title: "Blogni AI",
-    category: "Artificial Intelligence",
-    description: "AI-powered content generation platform with multi-language support.",
-    image: "/projects/project3.png",
-    video: "/projects/videos/blogni-demo.mp4",
-    tags: ["Next.js", "Gemini AI", "Clerk Auth", "Redis"],
-    demoUrl: "https://blogni.vercel.app",
-    githubUrl: "https://github.com/Sahilmd01/Blogni",
-    accentColor: "from-amber-500 to-orange-600",
+    title: "PipelineX",
+    category: "Full-Stack Systems",
+    description:
+      "PipelineX is a visual workflow and AI pipeline builder that allows users to design, validate, and execute DAG-based workflows using a drag-and-drop canvas with backend validation.",
+    image: "/projects/pipelinex_logo.png",
+    gif: "/projects/pipelinex_gif.gif",
+    tags: [
+      "React",
+      "React Flow",
+      "Zustand",
+      "FastAPI",
+      "Python",
+      "DAG Validation"
+    ],
+    demoUrl: "https://pipeline-x-one.vercel.app/",
+    githubUrl: "https://github.com/DhirajKarangale/PipelineX",
+    featured: false,
+    accentColor: "from-emerald-500 to-teal-600",
     status: "Live",
-    highlights: ["AI content generation", "Multi-language", "User accounts"]
+    highlights: [
+      "Built drag-and-drop workflow canvas using React Flow",
+      "Designed node abstraction with dynamic variable handles",
+      "Implemented backend DAG validation to prevent cycles",
+      "Focused on UX: grid snapping, keyboard shortcuts, smooth interactions"
+    ]
   },
   {
     id: 4,
-    title: "Spendlix",
-    category: "FinTech",
-    description: "Financial tracking platform with expense management and budgeting features.",
-    image: "/projects/project4.png",
-    video: "/projects/videos/spendlix-demo.mp4",
-    tags: ["React", "Chart.js", "Node.js", "Firebase"],
-    demoUrl: "https://spendlix.vercel.app/login",
-    githubUrl: "https://github.com/Sahilmd01/Spendlix",
-    accentColor: "from-rose-500 to-pink-600",
+    title: "FUSE",
+    category: "Real-time Systems",
+    description:
+      "FUSE is a real-time social media platform featuring category-based feeds, personalized timelines, and live messaging with media support built on WebSockets.",
+    image: "/projects/fuse_logo.png",
+    gif: "/projects/fuse_gif.gif",
+    tags: [
+      "React",
+      "Node.js",
+      "Socket.IO",
+      "PostgreSQL",
+      "Cloudinary",
+      "Real-time Systems"
+    ],
+    demoUrl: "https://fuse-phi.vercel.app/",
+    githubUrl: "https://github.com/DhirajKarangale/FUSE",
+    featured: false,
+    accentColor: "from-blue-500 to-cyan-600",
     status: "Live",
-    highlights: ["Expense tracking", "Data visualization", "Budget planning"]
+    highlights: [
+      "Implemented real-time messaging using Socket.IO",
+      "Designed category-based posting and personalized feeds",
+      "Optimized media uploads and delivery via Cloudinary",
+      "Handled concurrent users with stable WebSocket connections"
+    ]
   },
-  {
-    id: 5,
-    title: "Eattoo",
-    category: "Food Tech",
-    description: "Food delivery platform with restaurant listings and order management.",
-    image: "/projects/project5.png",
-    video: "/projects/videos/eattoo-demo.mp4",
-    tags: ["React", "Redux", "Mapbox", "Stripe"],
-    demoUrl: "https://eattoo-food-delivery-website-frontend.onrender.com/",
-    githubUrl: "https://github.com/Sahilmd01/Eattoo-food-delivery-website",
-    accentColor: "from-violet-500 to-purple-600",
-    status: "Live",
-    highlights: ["Restaurant listings", "Order system", "Location services"]
-  },
-  {
-    id: 6,
-    title: "JobQue",
-    category: "HR Tech",
-    description: "Job matching platform with candidate tracking and application management.",
-    image: "/projects/project6.png",
-    video: "/projects/videos/jobque-demo.mp4",
-    tags: ["Next.js", "PostgreSQL", "Redis", "AI Integration"],
-    demoUrl: "#",
-    githubUrl: "#",
-    accentColor: "from-orange-500 to-red-600",
-    status: "Development",
-    highlights: ["Job matching", "Candidate tracking", "Application system"]
-  }
 ];
 
 const categoryColors = {
-  "Healthcare SaaS": "from-emerald-500/20 to-teal-600/20 text-emerald-600 border-emerald-500/30",
-  "E-commerce": "from-purple-500/20 to-indigo-600/20 text-purple-600 border-purple-500/30",
-  "Real-time Communication": "from-blue-500/20 to-cyan-600/20 text-blue-600 border-blue-500/30",
-  "Artificial Intelligence": "from-amber-500/20 to-orange-600/20 text-amber-600 border-amber-500/30",
-  "FinTech": "from-rose-500/20 to-pink-600/20 text-rose-600 border-rose-500/30",
-  "Food Tech": "from-violet-500/20 to-purple-600/20 text-violet-600 border-violet-500/30",
-  "HR Tech": "from-orange-500/20 to-red-600/20 text-orange-600 border-orange-500/30"
+  "AI Infrastructure": "from-cyan-500/20 to-blue-600/20 text-cyan-600 border-cyan-500/30",
+  "Developer Tooling": "from-purple-500/20 to-indigo-600/20 text-purple-600 border-purple-500/30",
+  "Full-Stack Systems": "from-emerald-500/20 to-teal-600/20 text-emerald-600 border-emerald-500/30",
+  "Real-Time Systems": "from-blue-500/20 to-cyan-600/20 text-blue-600 border-blue-500/30",
+  "Product Engineering": "from-amber-500/20 to-orange-600/20 text-amber-600 border-amber-500/30"
 };
 
 export const ProjectsSection = () => {
   const [showAll, setShowAll] = useState(false);
   const [activeFilter, setActiveFilter] = useState("All");
-  const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
   const [hoveredProject, setHoveredProject] = useState(null);
-  const [selectedVideo, setSelectedVideo] = useState(null);
   const [selectedProject, setSelectedProject] = useState(null);
-  const videoRef = useRef(null);
   const sectionRef = useRef(null);
-
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"]
-  });
-
-  const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
-  const opacityBg = useTransform(scrollYProgress, [0, 0.5, 1], [0.1, 0.2, 0.1]);
 
   const filteredProjects = activeFilter === "All"
     ? projects
@@ -164,18 +149,8 @@ export const ProjectsSection = () => {
     setIsMobileFilterOpen(false);
   };
 
-  const handleVideoPlay = (project) => {
-    // setSelectedVideo(project);
+  const handleSelectProject = (project) => {
     setSelectedProject(project);
-  };
-
-  const handleCloseVideo = () => {
-    setSelectedVideo(null);
-    setSelectedProject(null)
-    if (videoRef.current) {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0;
-    }
   };
 
   const ProjectHighlights = ({ highlights }) => (
@@ -188,6 +163,11 @@ export const ProjectsSection = () => {
       ))}
     </div>
   );
+
+  const truncate = (text, limit = 120) => {
+    if (!text) return "";
+    return text.length > limit ? text.slice(0, limit) + "…" : text;
+  };
 
   return (
     <section
@@ -290,7 +270,6 @@ export const ProjectsSection = () => {
               >
                 <div className="relative bg-background border border-border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 h-full flex flex-col">
 
-                  {/* Image/Video Section */}
                   <div className="relative h-48 overflow-hidden">
                     <motion.img
                       src={project.image}
@@ -322,9 +301,8 @@ export const ProjectsSection = () => {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: hoveredProject === project.id ? 1 : 0 }}
                     >
-                      {/* Video Play Button */}
                       <motion.button
-                        onClick={() => handleVideoPlay(project)}
+                        onClick={() => handleSelectProject(project)}
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                         className="p-3 rounded-full backdrop-blur-sm border bg-white/20 text-white border-white/30 hover:bg-white/30 transition-all duration-300"
@@ -370,7 +348,7 @@ export const ProjectsSection = () => {
                     </div>
 
                     <p className="text-muted-foreground text-sm mb-4 leading-relaxed flex-1">
-                      {project.description}
+                      {truncate(project.description, 120)}
                     </p>
 
                     {/* Key Features */}
@@ -479,18 +457,7 @@ export const ProjectsSection = () => {
             setOpen={(state) => {
               if (!state) setSelectedProject(null);
             }}
-            project={
-              selectedProject
-                ? {
-                  title: selectedProject.title,
-                  image: selectedProject.image,
-                  category: selectedProject.category,
-                  description: selectedProject.description,
-                  technologies: selectedProject.tags,
-                  link: selectedProject.demoUrl
-                }
-                : null
-            }
+            project={selectedProject ? selectedProject : null}
           />
         )}
       </AnimatePresence>

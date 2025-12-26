@@ -9,7 +9,6 @@ export default function ProjectDetails({ open, setOpen, project }) {
     if (project?.link) window.open(project.link, "_blank", "noopener,noreferrer");
   };
 
-  // Disable background scroll when modal opens
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "auto";
     return () => (document.body.style.overflow = "auto");
@@ -30,9 +29,10 @@ export default function ProjectDetails({ open, setOpen, project }) {
           {/* Modal */}
           <motion.div
             className="fixed top-1/2 left-1/2 w-[95vw] max-w-[620px]
-                       -translate-x-1/2 -translate-y-1/2 z-50
-                       rounded-2xl border border-white/10
-                       bg-white/10 backdrop-blur-xl text-white p-6 shadow-xl"
+           max-h-[85vh] overflow-hidden flex flex-col
+           -translate-x-1/2 -translate-y-1/2 z-50
+           rounded-2xl border border-white/10
+           bg-white/10 backdrop-blur-xl text-white p-6 shadow-xl"
             initial={{ opacity: 0, scale: 0.75, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.85, y: 10 }}
@@ -51,24 +51,19 @@ export default function ProjectDetails({ open, setOpen, project }) {
               </button>
             </div>
 
-            {/* Image */}
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full rounded-xl mb-4 object-cover shadow-md"
-            />
-
-            {/* GIF (optional) */}
-            {project.gif && (
-              <img
-                src={project.gif}
-                alt={project.title + ' GIF'}
-                className="w-full rounded-xl mb-4 object-cover shadow-md"
-              />
-            )}
+            {/* Demo GIF */}
+            {/* {project.gif && (
+              <div>
+                <img
+                  src={project.gif}
+                  alt={`${project.title} demo`}
+                  className="w-full rounded-xl mb-4 object-cover shadow-md"
+                />
+              </div>
+            )} */}
 
             {/* Category + Visit Button */}
-            <div className="flex justify-between items-center mb-4 text-sm text-gray-300">
+            {/* <div className="flex justify-between items-center mb-4 text-sm text-gray-300">
               <div className="px-3 py-1 rounded-full bg-primary/20 border border-primary/30 text-primary text-xs font-medium">
                 {project.category}
               </div>
@@ -77,22 +72,90 @@ export default function ProjectDetails({ open, setOpen, project }) {
                 <button
                   onClick={handleVisitSite}
                   className="px-3 py-1 text-xs rounded-md border border-white/30 
-                           bg-white/10 backdrop-blur-sm hover:bg-white/20 transition"
+                 bg-white/10 backdrop-blur-sm hover:bg-white/20 transition"
                 >
                   Visit Site
                 </button>
               )}
-            </div>
+            </div> */}
 
             {/* Description → ONLY text, left aligned, scrollable */}
-            <p
-              className="text-gray-200 text-sm leading-relaxed text-left
-                         max-h-[140px] overflow-y-auto pr-2
-                         scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent
-                         hover:scrollbar-thumb-white/40 transition"
+            {/* <div className="text-gray-200 text-sm leading-relaxed text-left
+            overflow-y-auto pr-2 space-y-4
+            scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent
+            hover:scrollbar-thumb-white/40 transition"
+              style={{ maxHeight: "calc(85vh - 140px)" }}
             >
-              {project.description}
-            </p>
+
+              <section>
+                <h4 className="text-primary font-medium mb-1">Overview</h4>
+                <p>{project.description}</p>
+              </section>
+
+              {project.highlights && (
+                <section>
+                  <h4 className="text-primary font-medium mb-1">Key Work</h4>
+                  <ul className="list-disc list-inside space-y-1">
+                    {project.highlights.map((item, idx) => (
+                      <li key={idx}>{item}</li>
+                    ))}
+                  </ul>
+                </section>
+              )}
+            </div> */}
+
+            {/* Scrollable Content */}
+            <div className="flex-1 overflow-y-auto pr-2 space-y-4
+              scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent
+              hover:scrollbar-thumb-white/40 transition">
+
+              {/* Demo GIF */}
+              {project.gif && (
+                <img
+                  src={project.gif}
+                  alt={`${project.title} demo`}
+                  className="w-full rounded-xl object-cover shadow-md"
+                />
+              )}
+
+              {/* Category + Visit Button */}
+              <div className="flex justify-between items-center text-sm text-gray-300">
+                <div className="px-3 py-1 rounded-full bg-primary/20 border border-primary/30 text-primary text-xs font-medium">
+                  {project.category}
+                </div>
+
+                {project.link && (
+                  <button
+                    onClick={handleVisitSite}
+                    className="px-3 py-1 text-xs rounded-md border border-white/30 
+                  bg-white/10 backdrop-blur-sm hover:bg-white/20 transition"
+                  >
+                    Visit Site
+                  </button>
+                )}
+              </div>
+
+              {/* Overview */}
+              <section>
+                <h4 className="text-primary font-medium mb-1">Overview</h4>
+                <p className="text-sm text-gray-200 leading-relaxed">
+                  {project.description}
+                </p>
+              </section>
+
+              {/* Highlights */}
+              {project.highlights && (
+                <section>
+                  <h4 className="text-primary font-medium mb-1">Key Work</h4>
+                  <ul className="list-disc list-inside space-y-1 text-sm text-gray-200">
+                    {project.highlights.map((item, idx) => (
+                      <li key={idx}>{item}</li>
+                    ))}
+                  </ul>
+                </section>
+              )}
+            </div>
+
           </motion.div>
         </>
       )}
