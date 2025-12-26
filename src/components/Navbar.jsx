@@ -25,7 +25,7 @@ const navItems = [
 ];
 
 const ThemeToggle = () => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("dark");
 
   useEffect(() => {
     const stored = localStorage.getItem("theme");
@@ -192,9 +192,9 @@ export const Navbar = () => {
                 <span className="text-xs mt-1 hidden md:block">{item.name}</span>
               </a>
             ))}
-            <div className="flex items-center px-2">
+            {/* <div className="flex items-center px-2">
               <ThemeToggle />
-            </div>
+            </div> */}
           </div>
         </div>
       </motion.div>

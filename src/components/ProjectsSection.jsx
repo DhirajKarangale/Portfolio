@@ -9,7 +9,7 @@ const projects = [
     title: "SatyaMark",
     category: "AI Infrastructure",
     description:
-      "SatyaMark is an open-source, multi-modal content verification infrastructure that provides real-time, explainable trust signals using LLM pipelines, RAG-based evidence retrieval, image forensics, Redis Streams, and WebSockets.",
+      "SatyaMark is an open-source, multi-modal content verification infrastructure designed to provide real-time, explainable trust signals across text and images. Instead of issuing absolute truth claims, the system surfaces transparent verification marks, confidence scores, and human-readable reasoning, enabling users and platforms to assess credibility with context.\n\nThe platform combines LLM-driven fact verification for text with ML-based and forensic analysis for images, orchestrated through independent AI workers. Verification results are streamed live using Redis Streams and WebSockets, allowing UIs to reflect progressive updates as confidence evolves.\n\nSatyaMark is built as embeddable infrastructure, featuring a centralized inspection dashboard and an official React SDK that injects live verification marks directly into existing applications. The architecture emphasizes modularity, privacy-first data handling, and extensibility, making it suitable as a shared trust layer across social platforms, media tools, and information-driven products.",
     image: "/projects/satyamark_logo.png",
     gif: "/projects/satyamark_gif.gif",
     tags: [
@@ -40,15 +40,17 @@ const projects = [
     title: "PDF & PPT Export",
     category: "Developer Tooling",
     description:
-      "A DOM-driven export engine for React dashboards that converts real rendered UI into structured multi-page PDFs and fully editable PowerPoint files instead of flat screenshots.",
+      "PDF & PPT Export is an open-source React export engine that converts real, rendered DOM dashboards into multi-page PDFs and fully editable PowerPoint (PPTX) files. Unlike screenshot-based solutions, it uses a structure-first approach that analyzes the DOM layout, components, and metadata to preserve semantic structure and layout fidelity.\n\nThe system intelligently paginates complex dashboards into print-ready A4 PDFs without splitting cards or breaking visual hierarchy, while gracefully handling headers, footers, and layout fallbacks. For PowerPoint exports, it reconstructs dashboards as native PPT elements — including text boxes, shapes, and charts — enabling true post-export editing.\n\nBuilt as a reusable React library with production-ready defaults, the project prioritizes developer experience, predictable output, and extensibility. A complete demo and reference implementation showcase real-world usage patterns, edge cases, and customization strategies for data-heavy applications.",
     image: "/projects/pdfppt_logo.png",
     gif: "/projects/pdfppt_gif.gif",
     tags: [
       "React",
       "jsPDF",
       "pptxgenjs",
+      "PDF Generation",
+      "PPTX Export",
       "DOM Analysis",
-      "Open Source"
+      "Open Source",
     ],
     demoUrl: "https://pdfppt-export.vercel.app/",
     githubUrl: "https://github.com/DhirajKarangale/pdfppt-export",
@@ -67,16 +69,18 @@ const projects = [
     title: "PipelineX",
     category: "Full-Stack Systems",
     description:
-      "PipelineX is a visual workflow and AI pipeline builder that allows users to design, validate, and execute DAG-based workflows using a drag-and-drop canvas with backend validation.",
+      "PipelineX is a full-stack visual workflow and AI pipeline builder that allows users to design, connect, and validate modular pipelines using an interactive, node-based canvas. It is built to support AI workflows, automation systems, and data-processing graphs where structure, correctness, and clarity are critical.\n\nThe frontend is powered by a React Flow–based editor with drag-and-drop nodes, multi-selection, keyboard shortcuts, and grid-snapped layouts for precise composition. A unified node abstraction layer enables rapid creation of new node types while maintaining consistent behavior, validation rules, and visual styling.\n\nOn the backend, PipelineX uses FastAPI to validate pipeline structure, enforce DAG constraints, and analyze graph metadata such as node and edge counts. The system prevents circular dependencies and invalid connections in real time, ensuring pipelines are both visually intuitive and structurally sound.",
     image: "/projects/pipelinex_logo.png",
     gif: "/projects/pipelinex_gif.gif",
     tags: [
       "React",
       "React Flow",
       "Zustand",
-      "FastAPI",
+      "Workflow Builder",
+      "Graph Systems",
       "Python",
-      "DAG Validation"
+      "FastAPI",
+      "DAG Validation",
     ],
     demoUrl: "https://pipeline-x-one.vercel.app/",
     githubUrl: "https://github.com/DhirajKarangale/PipelineX",
@@ -95,7 +99,7 @@ const projects = [
     title: "FUSE",
     category: "Real-time Systems",
     description:
-      "FUSE is a real-time social media platform featuring category-based feeds, personalized timelines, and live messaging with media support built on WebSockets.",
+      "FUSE is a modern, interest-based social media platform designed to promote high-quality content discovery and real-time interaction. The platform organizes content into predefined creative categories such as UI/UX, Game Design, 2D/3D Art, and Animation, ensuring relevance and reducing feed noise.\n\nUsers can personalize their experience by selecting categories of interest, resulting in a curated feed that surfaces only relevant posts. A trending section highlights high-engagement content across all categories, while real-time messaging enables seamless text and image communication between users.\n\nThe system leverages WebSockets for instant message delivery and Cloudinary for optimized media handling. Built with a mobile-first mindset, FUSE delivers a smooth, responsive UI enhanced with Framer Motion animations, making it a polished example of a real-time, user-centric social platform.",
     image: "/projects/fuse_logo.png",
     gif: "/projects/fuse_gif.gif",
     tags: [
@@ -118,6 +122,121 @@ const projects = [
       "Handled concurrent users with stable WebSocket connections"
     ]
   },
+  {
+    id: 5,
+    title: "Puzzle Challenge",
+    category: "Product Engineering",
+    description:
+      "Puzzle Challenge is a full-stack product engineering project that demonstrates a complete, production-style user journey — from secure authentication to validated payments — wrapped in a modern, responsive UI. The project focuses on correctness, security, and smooth user experience across both web and mobile views.\n\nThe application implements an email-based OTP authentication flow using JWT for session management, ensuring a passwordless and secure login experience. Payments are handled through Stripe Checkout with built-in validation, including mandatory user consent before initiating transactions.\n\nOn the frontend, the app is built with React 19 and enhanced using Tailwind CSS and Framer Motion for polished animations, while Redux Toolkit manages global state predictably. The backend, powered by Express.js and PostgreSQL, handles authentication, payment verification, and secure API communication, making the project a strong example of end-to-end product delivery.",
+    image: "/projects/puzzlechallenge_logo.png",
+    gif: "/projects/puzzlechallenge_gif.gif",
+    tags: [
+      "React",
+      "Redux Toolkit",
+      "Stripe",
+      "OTP Authentication",
+      "PostgreSQL",
+      "Product Engineering"
+    ],
+    demoUrl: "https://puzzle-challenge-eight.vercel.app/",
+    githubUrl: "https://github.com/DhirajKarangale/PuzzleChallenge",
+    featured: false,
+    accentColor: "from-amber-500 to-orange-600",
+    status: "Live",
+    highlights: [
+      "Implemented secure email-based OTP authentication using Nodemailer and JWT",
+      "Integrated Stripe Checkout with validation and consent-based payment flow",
+      "Built a responsive, mobile-first UI with Tailwind CSS and Framer Motion",
+      "Managed global application state using Redux Toolkit",
+      "Delivered a complete, test-ready payment experience using Stripe test cards"
+    ]
+  },
+  {
+    id: 6,
+    title: "BaliLore",
+    category: "Full-Stack Systems",
+    description:
+      "BaliLore is a fast, modular web platform built to preserve and showcase Bali’s rich cultural heritage through community-driven storytelling. The application enables locals and visitors to share stories, hidden histories, photos, videos, poems, and street art, forming a living digital archive of the island’s culture.\n\nBuilt with React and Vite, the platform emphasizes performance, SEO readiness, and clean navigation. Users can explore curated content, submit stories through validated forms, browse community galleries, and toggle between day and night themes for an enhanced reading experience.\n\nDeployed on Vercel and optimized for scalability, BaliLore demonstrates modular frontend architecture, thoughtful UI/UX design, and a strong focus on accessibility and performance, making it a polished example of modern web development for cultural and content-driven platforms.",
+    image: "/projects/balilore_logo.png",
+    gif: "/projects/balilore_gif.gif",
+    tags: [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "SEO",
+      "Content Platform",
+      "Community-Driven"
+    ],
+    demoUrl: "https://balilore-staging.vercel.app",
+    githubUrl: "https://github.com/DhirajKarangale/balilore-staging",
+    featured: false,
+    accentColor: "from-emerald-500 to-teal-600",
+    status: "Live",
+    highlights: [
+      "Built a modular, performance-focused React + Vite application with SEO-ready pages",
+      "Enabled community submissions with validated forms for stories and media",
+      "Implemented responsive layouts and smooth navigation using React Router",
+      "Added theme toggling for improved accessibility and user experience",
+      "Deployed on Vercel with optimizations for fast load times and scalability"
+    ]
+  },
+  {
+    id: 7,
+    title: "Consent Management",
+    category: "Product Engineering",
+    description:
+      "Consent Management is a role-based web platform built to model and enforce data consent workflows aligned with India’s Digital Personal Data Protection (DPDP) Act, 2023. The system demonstrates how regulated consent flows can be implemented with clarity, security, and scalability in mind.\n\nThe application supports four distinct user roles — User, Company, Consent Manager, and Government — each with dedicated interfaces and permissions. Role-based routing and access control ensure that users can only view and act on data relevant to their responsibilities.\n\nBuilt with React, the platform emphasizes performance and maintainability through lazy loading, code splitting, and structured state management. Data fetching and synchronization are handled efficiently using React Query, resulting in a responsive, compliant, and production-style consent management system.",
+    image: "/projects/consentmanagement_logo.png",
+    gif: "/projects/consentmanagement_gif.gif",
+    tags: [
+      "React",
+      "Role-Based Access",
+      "DPDP Act 2023",
+      "React Query",
+      "Redux Toolkit",
+      "Product Engineering"
+    ],
+    demoUrl: null,
+    githubUrl: "https://github.com/DhirajKarangale/ConsentManagement",
+    featured: false,
+    accentColor: "from-amber-500 to-orange-600",
+    status: "Completed",
+    highlights: [
+      "Designed a consent workflow aligned with India’s DPDP Act, 2023",
+      "Implemented role-based access control across four distinct user types",
+      "Built responsive and accessible UIs using Bootstrap and custom components",
+      "Integrated React Query for efficient data fetching and caching",
+      "Optimized performance using lazy loading, code splitting, and Redux Toolkit"
+    ]
+  },
+  {
+    id: 8,
+    title: "Pocket Money",
+    category: "Full-Stack Systems",
+    description:
+      "Pocket Money is a full-stack job-matching platform built to help students discover part-time work and internship opportunities across multiple domains. The platform focuses on simplicity, real-time interactions, and accessibility, making it easy for students and job providers to connect efficiently.\n\nBuilt using React and Firebase, the system supports real-time database updates, secure user authentication, and streamlined job listing workflows. Students can browse opportunities using dynamic filters based on role, location, and domain preferences, while providers can post and manage listings with minimal friction.\n\nThe platform also includes a seeker–provider messaging system implemented using SMTP.js, enabling direct communication without exposing personal contact details. With a responsive UI, validated forms, and structured navigation, Pocket Money demonstrates a practical, production-style full-stack application.",
+    image: "/projects/pocketmoney_logo.png",
+    gif: "/projects/pocketmoney_gif.gif",
+    tags: [
+      "React",
+      "Firebase",
+      "Real-Time Database",
+      "Job Platform",
+      "Full-Stack"
+    ],
+    demoUrl: "https://pocket-money-web.vercel.app/",
+    githubUrl: "https://github.com/DhirajKarangale/PocketMoneyWeb",
+    featured: false,
+    accentColor: "from-emerald-500 to-teal-600",
+    status: "Live",
+    highlights: [
+      "Built a job-matching platform for students targeting part-time and internship opportunities",
+      "Integrated Firebase for real-time database operations and user authentication",
+      "Implemented seeker-provider messaging using SMTP.js",
+      "Added dynamic job filters for role, location, and domain-based discovery",
+      "Delivered a responsive UI with form validation and route-based navigation"
+    ]
+  }
 ];
 
 const categoryColors = {
@@ -158,7 +277,7 @@ export const ProjectsSection = () => {
       {highlights.map((highlight, index) => (
         <div key={index} className="flex items-center gap-2 text-sm">
           <div className="w-1.5 h-1.5 bg-primary rounded-full" />
-          <span className="text-muted-foreground">{highlight}</span>
+          <span className="text-muted-foreground text-left">{highlight}</span>
         </div>
       ))}
     </div>
@@ -347,7 +466,7 @@ export const ProjectsSection = () => {
                       )}
                     </div>
 
-                    <p className="text-muted-foreground text-sm mb-4 leading-relaxed flex-1">
+                    <p className="text-muted-foreground text-sm mb-4 leading-relaxed text-left flex-1">
                       {truncate(project.description, 120)}
                     </p>
 

@@ -94,7 +94,7 @@ export default function ProjectDetails({ open, setOpen, project }) {
               {project.highlights && (
                 <section>
                   <h4 className="text-primary font-medium mb-1">Key Work</h4>
-                  <ul className="list-disc list-inside space-y-1 text-sm text-gray-200">
+                  <ul className="list-disc1 list-inside space-y-1 text-sm text-gray-200 text-left1">
                     {project.highlights.map((item, idx) => (
                       <li key={idx}>{item}</li>
                     ))}
