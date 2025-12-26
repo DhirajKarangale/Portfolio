@@ -4,7 +4,7 @@ import { useRef, useState, useEffect } from "react";
 import { useInView } from "framer-motion";
 import { Quote, Star, ChevronLeft, ChevronRight } from "lucide-react";
 
-export const TestimonialSection = () => {
+export const ExperienceSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(3);
   const ref = useRef(null);
@@ -99,7 +99,7 @@ export const TestimonialSection = () => {
 
   return (
     <section
-      id="testimonials"
+      id="experience"
       className="relative py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-b from-primary/5 via-background to-background"
       ref={ref}
     >

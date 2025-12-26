@@ -4,7 +4,7 @@ import {
   User,
   Code,
   Briefcase,
-  MessageSquare,
+  BadgeCheck,
   Mail,
   Sun,
   Moon,
@@ -20,7 +20,7 @@ const navItems = [
   { name: "About", href: "#about", icon: User },
   { name: "Skills", href: "#skills", icon: Code },
   { name: "Projects", href: "#projects", icon: Briefcase },
-  { name: "Testimonials", href: "#testimonials", icon: MessageSquare },
+  { name: "Experience", href: "#experience", icon: BadgeCheck },
   { name: "Contact", href: "#contact", icon: Mail },
 ];
 
@@ -106,7 +106,7 @@ export const Navbar = () => {
       >
         {/* GitHub Button */}
         <motion.a
-          href="https://github.com/DhirajKarangale" 
+          href="https://github.com/DhirajKarangale"
           target="_blank"
           rel="noopener noreferrer"
           className={cn(
@@ -125,7 +125,7 @@ export const Navbar = () => {
 
         {/* LinkedIn Button */}
         <motion.a
-          href="https://www.linkedin.com/in/dhiraj-karangale-464ab91bb/" 
+          href="https://www.linkedin.com/in/dhiraj-karangale-464ab91bb/"
           target="_blank"
           rel="noopener noreferrer"
           className={cn(
