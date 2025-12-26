@@ -2,12 +2,140 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/Logo.png" />
+    <link rel="icon" type="image/png" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DhirajKarangale</title>
+
+    <!-- Primary Meta Tags -->
+    <title>Dhiraj Karangale | Full Stack Developer</title>
+    <meta
+      name="description"
+      content="Dhiraj Karangale is a Full Stack Developer building scalable, high-performance web applications using React, Node.js, PostgreSQL, Redis, and real-time systems. Open-source maintainer, HackWithInfy finalist, and creator of AI-powered verification infrastructure."
+    />
+    <meta
+      name="keywords"
+      content="Dhiraj Karangale, Full Stack Developer, React Developer, Node.js Developer, Backend Engineer, WebSockets, Redis, PostgreSQL, Open Source, AI Systems, RAG, LangChain, Portfolio"
+    />
+    <meta name="author" content="Dhiraj Karangale" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://dhirajkarangale.netlify.app/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Dhiraj Karangale | Full Stack Developer" />
+    <meta
+      property="og:description"
+      content="Full Stack Developer focused on scalable systems, real-time architectures, and production-grade web applications. Open-source maintainer and HackWithInfy finalist."
+    />
+    <meta property="og:url" content="https://dhirajkarangale.netlify.app/" />
+    <meta property="og:image" content="https://dhirajkarangale.netlify.app/logo.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Dhiraj Karangale Portfolio" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Dhiraj Karangale | Full Stack Developer" />
+    <meta
+      name="twitter:description"
+      content="Building scalable web systems with React, Node.js, Redis, and real-time architectures."
+    />
+    <meta name="twitter:image" content="https://dhirajkarangale.netlify.app/logo.png" />
+    <meta name="twitter:site" content="@dhirajkarangale" />
+    <meta name="twitter:creator" content="@dhirajkarangale" />
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="msapplication-TileColor" content="#0f172a" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Preload entry -->
+    <link rel="preload" href="/src/main.jsx" as="script" />
+
+    <!-- Structured Data: Person -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Dhiraj Karangale",
+        "url": "https://dhirajkarangale.netlify.app/",
+        "image": "https://dhirajkarangale.netlify.app/logo.png",
+        "jobTitle": "Full Stack Developer",
+        "description": "Full Stack Developer specializing in scalable web systems, real-time architectures, and AI-powered platforms.",
+        "sameAs": [
+          "https://github.com/DhirajKarangale",
+          "https://www.linkedin.com/in/dhiraj-karangale-464ab91bb/",
+          "https://x.com/dhirajkarangale"
+        ],
+        "knowsAbout": [
+          "React",
+          "TypeScript",
+          "Node.js",
+          "PostgreSQL",
+          "Redis",
+          "WebSockets",
+          "System Design",
+          "RAG Pipelines",
+          "LangChain",
+          "Open Source Software"
+        ],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Infosys"
+        }
+      }
+    </script>
+
+    <!-- Structured Data: Website -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Dhiraj Karangale Portfolio",
+        "url": "https://dhirajkarangale.netlify.app/",
+        "description": "Portfolio showcasing scalable full-stack projects, real-time systems, and open-source work by Dhiraj Karangale.",
+        "author": {
+          "@type": "Person",
+          "name": "Dhiraj Karangale"
+        }
+      }
+    </script>
   </head>
+
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <!-- Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header role="banner">
+      <nav role="navigation" aria-label="Main navigation"></nav>
+    </header>
+
+    <main id="main-content" role="main">
+      <div id="root"></div>
+    </main>
+
+    <footer role="contentinfo"></footer>
+
+    <script type="module" src="/src/main.jsx"></script>
+
+    <style>
+      .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 8px;
+        background: #000;
+        color: #fff;
+        padding: 8px 12px;
+        z-index: 100;
+        text-decoration: none;
+        border-radius: 4px;
+      }
+
+      .skip-link:focus {
+        top: 8px;
+      }
+    </style>
   </body>
 </html>
