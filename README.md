@@ -5,7 +5,7 @@ I build **production-grade systems**, not demos.
 
 My work spans frontend architecture, backend APIs, real-time systems, and AI-powered pipelines. I focus on **clarity, performance, and reliability**, and I prefer shipping software that runs continuously in real environments.
 
-🌐 **Portfolio:** https://dhirajkarangale.netlify.app/
+🌐 **Portfolio:** https://dhirajkarangale.vercel.app/
 
 ---
 
@@ -125,7 +125,7 @@ http://localhost:5173
 
 ## Links
 
-- 🌐 Portfolio: https://dhirajkarangale.netlify.app/  
+- 🌐 Portfolio: https://dhirajkarangale.vercel.app/  
 - 💻 GitHub: https://github.com/DhirajKarangale  
 - 🔗 LinkedIn: https://www.linkedin.com/in/dhiraj-karangale-464ab91bb/  
 - 🧠 LeetCode: https://leetcode.com/u/DhirajKarangale/  
