@@ -17,7 +17,7 @@ function App() {
       disableTransitionOnChange
     >
       <Toaster />
-      {!welcomeComplete ? (
+      {false && !welcomeComplete ? (
         <WelcomeScreen onWelcomeComplete={() => setWelcomeComplete(true)} />
       ) : (
         <BrowserRouter>
