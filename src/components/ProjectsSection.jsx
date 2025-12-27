@@ -466,8 +466,11 @@ export const ProjectsSection = () => {
                       )}
                     </div>
 
-                    <p className="text-muted-foreground text-sm mb-4 leading-relaxed text-left flex-1">
+                    {/* <p className="text-muted-foreground text-sm mb-4 leading-relaxed text-left flex-1">
                       {truncate(project.description, 120)}
+                    </p> */}
+                    <p className="text-muted-foreground text-sm mb-4 leading-relaxed text-left line-clamp-3">
+                      {project.description}
                     </p>
 
                     {/* Key Features */}
