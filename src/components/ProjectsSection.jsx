@@ -283,11 +283,6 @@ export const ProjectsSection = () => {
     </div>
   );
 
-  const truncate = (text, limit = 120) => {
-    if (!text) return "";
-    return text.length > limit ? text.slice(0, limit) + "…" : text;
-  };
-
   return (
     <section
       id="projects"
@@ -466,9 +461,6 @@ export const ProjectsSection = () => {
                       )}
                     </div>
 
-                    {/* <p className="text-muted-foreground text-sm mb-4 leading-relaxed text-left flex-1">
-                      {truncate(project.description, 120)}
-                    </p> */}
                     <p className="text-muted-foreground text-sm mb-4 leading-relaxed text-left line-clamp-3">
                       {project.description}
                     </p>
@@ -494,7 +486,7 @@ export const ProjectsSection = () => {
                     </div>
 
                     {/* Action Buttons */}
-                    <div className="flex gap-3 pt-4 border-t border-border">
+                    <div className="mt-auto flex gap-3 pt-4 border-t border-border">
                       <motion.a
                         href={project.demoUrl}
                         target="_blank"
