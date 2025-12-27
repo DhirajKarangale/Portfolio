@@ -1,133 +1,135 @@
-# Build a Modern Portfolio Website with React & TailwindCSS
+# Dhiraj Karangale
+**Full-Stack Engineer · Backend Systems · AI Infrastructure**
 
-<div align="center">
-  <br />
-  <a href="https://youtu.be/YOUR_VIDEO_ID" target="_blank">
-    <img src="./banner.png" alt="Portfolio Website Banner">
-  </a>
-  <br />
-  <div>
-    <img src="https://img.shields.io/badge/-React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
-    <img src="https://img.shields.io/badge/-TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss" alt="Tailwind CSS" />
-    <img src="https://img.shields.io/badge/-Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
-    <img src="https://img.shields.io/badge/-Lucide Icons-FD4D4D?style=for-the-badge&logo=lucide" alt="Lucide Icons" />
-    <img src="https://img.shields.io/badge/-Radix UI-9D4EDD?style=for-the-badge&logo=data:image/svg+xml;base64..." alt="Radix UI" />
-  </div>
-  <h3 align="center">Create a Stunning Developer Portfolio with Animations, Dark Mode, and Projects Showcase</h3>
-  <div align="center">
-    Follow the full video tutorial on 
-    <a href="https://youtu.be/YOUR_VIDEO_ID" target="_blank"><b>YouTube</b></a>
-  </div>
-  <br />
-</div>
+I build **production-grade systems**, not demos.
 
-## 📋 Table of Contents
+My work spans frontend architecture, backend APIs, real-time systems, and AI-powered pipelines. I focus on **clarity, performance, and reliability**, and I prefer shipping software that runs continuously in real environments.
 
-1. [Introduction](#-introduction)
-2. [Tech Stack](#-tech-stack)
-3. [Features](#-features)
-4. [Quick Start](#-quick-start)
-5. [Screenshots](#-screenshots)
-6. [Deployment](#-deployment)
+🌐 **Portfolio:** https://dhirajkarangale.netlify.app/
 
 ---
 
-## 🚀 Introduction
+## About
 
-In this tutorial, you'll learn how to build a modern portfolio website using **React**, **TailwindCSS**, **Vite**, and **Lucide Icons**. From dark mode support to responsive animations and deployable project showcases, this video walks you through every step—perfect for developers looking to level up their frontend skills or apply for jobs.
+I’m a **Full-Stack Engineer with 1.5+ years of production experience**, currently working at **Infosys**.
 
-🎥 Watch the full tutorial: [YouTube](https://youtu.be/YOUR_VIDEO_ID)
+I work end-to-end across:
+- UI architecture & UX polish  
+- Backend APIs & data modeling  
+- Caching, real-time pipelines, and infrastructure  
+- AI & retrieval-augmented systems  
 
----
-
-## ⚙️ Tech Stack
-
-* **React** – Component-based UI development
-* **Vite** – Lightning-fast build tool
-* **TailwindCSS** – Utility-first CSS for styling
-* **Lucide Icons** – Clean and beautiful icon pack
-* **Radix UI** – Accessible component primitives
-* **TypeScript (optional)** – Type safety and tooling
-* **GitHub & Vercel** – Deployment
+I care about **clean abstractions, predictable behavior, and systems that scale beyond localhost**.
 
 ---
 
-## ⚡️ Features
+## What This Portfolio Represents
 
-* 🌑 **Light/Dark Mode Toggle**
-  Save theme preference in local storage with beautiful transitions
+This portfolio is intentionally minimal.
 
-* 💫 **Animated Backgrounds**
-  Stars, meteors, scroll effects, and glowing UI elements
+It’s designed to demonstrate:
+- How I structure real systems  
+- How I reason about correctness & performance  
+- How I ship and maintain software  
+- How I balance UX with engineering constraints  
 
-* 📱 **Responsive Navigation**
-  Desktop and mobile menus with glassmorphism
-
-* 👨‍💻 **Hero & About Sections**
-  Showcase who you are with smooth intro animations and buttons
-
-* 📊 **Skills Grid**
-  Filterable progress bars and categories with animated width
-
-* 🖼️ **Projects Showcase**
-  Display screenshots, tech stacks, and GitHub/demo links
-
-* 📩 **Contact Section**
-  Social icons + responsive contact form with toast notifications
-
-* 🚀 **One-Click Deployment**
-  Easily host your site with Vercel and GitHub
+You’ll find **fewer projects, but deeper ones** — each built to solve a real problem properly.
 
 ---
 
-## 👌 Quick Start
+## Selected Work
 
-### Prerequisites
+### 🧠 SatyaMark — AI Verification Infrastructure
+**Open-source · Real-time · AI systems**
 
-* [Node.js](https://nodejs.org/)
-* [Git](https://git-scm.com/)
+A multi-modal verification infrastructure that provides **explainable trust signals** for text and images instead of binary truth labels.
 
-### Clone and Run
+**Highlights**
+- Multi-stage LLM verification pipelines  
+- RAG-based evidence retrieval & summarization  
+- Redis Streams + WebSockets for live updates  
+- ML-based & forensic image analysis  
+- Production-ready React SDK  
+
+**Links**
+- Live: https://satyamark.vercel.app/  
+- GitHub: https://github.com/DhirajKarangale/SatyaMark  
+
+---
+
+### 📄 PDF & PPT Export — DOM-Driven Export Engine
+**Open-source · Developer tooling**
+
+A React library that converts real, rendered dashboards into:
+- Multi-page PDFs  
+- Fully editable PowerPoint (PPTX) files  
+
+Built using a **structure-first DOM analysis approach**, not screenshot hacks.
+
+**Links**
+- Live: https://pdfppt-export.vercel.app/  
+- GitHub: https://github.com/DhirajKarangale/pdfppt-export  
+
+---
+
+### 🧩 PipelineX — Visual Workflow Builder
+**Full-stack · Graph systems**
+
+A node-based workflow builder for AI pipelines and automation systems with backend DAG validation and UX-focused interactions.
+
+**Links**
+- Live: https://pipeline-x-one.vercel.app/  
+- GitHub: https://github.com/DhirajKarangale/PipelineX  
+
+---
+
+## Tech Stack
+
+### Frontend
+- React, TypeScript  
+- Tailwind CSS, Framer Motion  
+- State & UI architecture  
+
+### Backend
+- Node.js, Express  
+- Java, Spring Boot  
+- REST APIs, WebSockets  
+
+### Data & Infrastructure
+- PostgreSQL, Redis  
+- Docker, Vercel, Netlify  
+
+### AI & Python
+- LangChain  
+- RAG pipelines  
+- Hugging Face models  
+
+---
+
+## Running This Portfolio Locally
 
 ```bash
-git clone https://github.com/yourusername/react-tailwind-portfolio.git
-cd react-tailwind-portfolio
+git clone https://github.com/DhirajKarangale/my-portfolio.git
+cd my-portfolio
 npm install
 npm run dev
 ```
 
-Your app will be available at: [http://localhost:5173](http://localhost:5173)
+The app will be available at:
+
+```
+http://localhost:5173
+```
 
 ---
 
-## 🖼️ Screenshots
+## Links
 
-> 📸 Add screenshots of your Hero section, Projects grid, and Contact form here to show off your site.
-
----
-
-## ☁️ Deployment
-
-### Deploy on Vercel
-
-1. Push your code to GitHub
-2. Go to [vercel.com](https://vercel.com)
-3. Import your repository
-4. Click **Deploy**
-
-Your live website will be hosted on a custom subdomain (e.g. `https://your-name.vercel.app`)
+- 🌐 Portfolio: https://dhirajkarangale.netlify.app/  
+- 💻 GitHub: https://github.com/DhirajKarangale  
+- 🔗 LinkedIn: https://www.linkedin.com/in/dhiraj-karangale-464ab91bb/  
+- 🧠 LeetCode: https://leetcode.com/u/DhirajKarangale/  
 
 ---
 
-## 🔗 Useful Links
-
-* [React Documentation](https://reactjs.org/)
-* [Tailwind CSS Docs](https://tailwindcss.com/)
-* [Lucide Icons](https://lucide.dev/)
-* [Radix UI](https://www.radix-ui.com/)
-* [Vite](https://vitejs.dev/)
-* [Vercel](https://vercel.com/)
-
----
-
-Let me know if you'd like me to generate a version with your actual GitHub repo, YouTube URL, or a banner image suggestion!
+*This portfolio focuses on depth over breadth and reflects how I approach real-world engineering problems.*
