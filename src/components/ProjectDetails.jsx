@@ -63,7 +63,7 @@ export default function ProjectDetails({ open, setOpen, project }) {
 
               {/* Demo GIF */}
               {project.gif && (
-                <div className="relative w-full h-[20vh] overflow-hidden rounded-xl">
+                <div className="relative w-full h-[20vh] sm:h-[30vh] overflow-hidden rounded-xl">
                   {!imgLoaded && (
                     <div className="absolute w-full h-full object-cover shadow-md animate-pulse bg-white/10 rounded-xl">
                     </div>

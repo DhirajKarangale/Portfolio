@@ -1,4 +1,4 @@
-import { ArrowDown, MousePointerClick, Sparkles, Code, Palette, Rocket, Award, Download, Calendar, Shield, Zap, Users, TrendingUp, Briefcase, Mail } from "lucide-react";
+import { Code, Award, Download, Shield, Zap, TrendingUp, Mail } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 
@@ -209,7 +209,7 @@ export const HeroSection = () => {
                         <div
                           key={index}
                           className={`
-                            min-h-[18px] flex items-start
+                            min-h-[18px] flex items-start text-left
                             whitespace-pre-wrap break-words leading-5
                             transition-opacity duration-150 ease-in-out
                             ${index < currentCodeLine ? 'opacity-100' : 'opacity-0'}
@@ -263,11 +263,11 @@ export const HeroSection = () => {
         </motion.div>
       </div>
 
-      <motion.div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center" initial={{ opacity: 0, y: 20 }} animate={{ opacity: [0, 1, 1, 0], y: [0, 6, 0, -6] }} transition={{ duration: 3, repeat: Infinity, repeatDelay: 0.5 }}>
+      {/* <motion.div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center" initial={{ opacity: 0, y: 20 }} animate={{ opacity: [0, 1, 1, 0], y: [0, 6, 0, -6] }} transition={{ duration: 3, repeat: Infinity, repeatDelay: 0.5 }}>
         <motion.div animate={{ y: [0, 4, 0] }} transition={{ duration: 2, repeat: Infinity }} className="w-5 h-8 border-2 border-primary/30 rounded-full flex justify-center">
           <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity }} className="w-1 h-2 bg-primary rounded-full mt-2" />
         </motion.div>
-      </motion.div>
+      </motion.div> */}
     </section>
   );
 };
