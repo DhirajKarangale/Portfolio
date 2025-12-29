@@ -208,21 +208,6 @@ export const HeroSection = () => {
                       {codeSnippets.map((line, index) => (
                         <div
                           key={index}
-                          // className={`
-                          //   min-h-[18px] flex items-start justify-start
-                          //   ${index < currentCodeLine ? 'opacity-100' : 'opacity-0'}
-                          //   ${index === currentCodeLine ? 'opacity-100' : ''}
-                          //   transition-opacity duration-150 ease-in-out
-                          //   ${line.includes("import") ? "text-purple-400 font-semibold" :
-                          //     line.includes("const") || line.includes("new") ? "text-blue-400 font-semibold" :
-                          //       line.includes("React") || line.includes("Node.js") || line.includes("TypeScript") ? "text-cyan-400" :
-                          //         line.includes("FullStackDeveloper") ? "text-emerald-400 font-semibold" :
-                          //           line.includes("//") ? "text-muted-foreground italic" :
-                          //             line.includes("await") || line.includes("connect") ? "text-yellow-400" :
-                          //               line.includes("'") ? "text-amber-400" :
-                          //                 "text-foreground"}
-                          // `}
-
                           className={`
                             min-h-[18px] flex items-start
                             whitespace-pre-wrap break-words leading-5
