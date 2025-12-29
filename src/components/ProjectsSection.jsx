@@ -265,7 +265,6 @@ export const ProjectsSection = () => {
   const handleFilterChange = (category) => {
     setActiveFilter(category);
     setShowAll(false);
-    setIsMobileFilterOpen(false);
   };
 
   const handleSelectProject = (project) => {
@@ -416,7 +415,10 @@ export const ProjectsSection = () => {
                       animate={{ opacity: hoveredProject === project.id ? 1 : 0 }}
                     >
                       <motion.button
-                        onClick={() => handleSelectProject(project)}
+                        onClick={() => {
+                          if (hoveredProject === project.id)
+                            handleSelectProject(project)
+                        }}
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                         className="p-3 rounded-full backdrop-blur-sm border bg-white/20 text-white border-white/30 hover:bg-white/30 transition-all duration-300"
@@ -435,7 +437,12 @@ export const ProjectsSection = () => {
                           ? "bg-gray-500/50 text-gray-300 border-gray-500/30 cursor-not-allowed"
                           : "bg-white/20 text-white border-white/30 hover:bg-white/30"
                           }`}
-                        onClick={(e) => project.githubUrl === "#" && e.preventDefault()}
+                        onClick={(e) => {
+                          if (hoveredProject !== project.id || project.githubUrl === "#") {
+                            e.preventDefault();
+                            return;
+                          }
+                        }}
                       >
                         <Code size={20} />
                       </motion.a>
