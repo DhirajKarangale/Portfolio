@@ -1,4 +1,4 @@
-import { ArrowDown, MousePointerClick, Sparkles, Code, Palette, Rocket, Award, Download, Calendar, Shield, Zap, Users, TrendingUp, Briefcase, Mail } from "lucide-react";
+import { Code, Award, Download, Shield, Zap, TrendingUp, Mail } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 
@@ -9,18 +9,18 @@ export const HeroSection = () => {
   const [displayedCode, setDisplayedCode] = useState("");
 
   const codeSnippets = [
-    "import { SystemsEngineer } from 'production';",
+    "import { Engineer } from 'production';",
     "",
-    "const dhiraj = new SystemsEngineer({",
+    "const dhiraj = new Engineer({",
     "  roles: ['Full-Stack', 'Backend'],",
-    "  stack: ['React', 'Node', 'Spring Boot', 'TypeScript', JavaScript],",
-    "  data: ['PostgreSQL', 'Redis'], realtime: ['WebSockets'],",
+    "  stack: ['React', 'Node', 'Spring Boot'],",
+    "  data: ['PostgreSQL', 'Redis'],",
+    "  realtime: ['WebSockets'],",
     "  ai: ['RAG', 'LangChain'],",
     "  openSource: true,",
     "});",
     "",
-    "// SatyaMark · PipelineX · PDF/PPT Export",
-    "dhiraj.ship({ uptime: '99.9%', prod: true });",
+    "dhiraj.ship();",
     "console.log('✔ systems live');",
   ];
 
@@ -54,6 +54,36 @@ export const HeroSection = () => {
 
   const handleViewResume = () => {
     window.open('https://github.com/DhirajKarangale/Resume/blob/main/DhirajKarangale.pdf', '_blank', 'noopener,noreferrer');
+  };
+
+  const getLineClass = (line) => {
+    const t = line.trim();
+
+    // import line
+    if (t.startsWith("import")) return "text-purple-400 font-semibold";
+
+    // const dhiraj = new Engineer({
+    if (t.startsWith("const dhiraj")) return "text-amber-400 font-semibold";
+
+    // closing / structural lines: }); , etc
+    if (/^[\s{}[\]();,]+$/.test(line)) return "text-amber-400 font-semibold";
+
+    // dhiraj.ship();
+    if (t.startsWith("dhiraj.ship")) return "text-emerald-400 font-semibold";
+
+    // console.log(...)
+    if (t.startsWith("console.log")) return "text-yellow-400";
+
+    // roles, stack
+    if (t.startsWith("roles:") || t.startsWith("stack:")) return "text-purple-400";
+
+    // data, realtime, ai
+    if (t.startsWith("data:") || t.startsWith("realtime:") || t.startsWith("ai:")) return "text-cyan-400";
+
+    // openSource
+    if (t.startsWith("openSource:")) return "text-foreground";
+
+    return "text-foreground";
   };
 
   return (
@@ -172,25 +202,19 @@ export const HeroSection = () => {
                   <div className="w-4 h-4 bg-green-400/20 rounded-full animate-pulse"></div>
                 </div>
 
-                <div className="font-mono text-sm bg-primary/5 rounded-lg border border-primary/10 min-h-[280px] flex">
-                  <div className="p-6 w-full">
+                <div className="font-mono text-sm bg-primary/5 rounded-lg border border-primary/10 h-[420px] sm:h-[380px] flex">
+                  <div className="p-2 w-full">
                     <div className="grid grid-cols-1 gap-1 h-full content-start select-none">
                       {codeSnippets.map((line, index) => (
                         <div
                           key={index}
                           className={`
-                            min-h-[20px] flex items-start
+                            min-h-[18px] flex items-start text-left
+                            whitespace-pre-wrap break-words leading-5
+                            transition-opacity duration-150 ease-in-out
                             ${index < currentCodeLine ? 'opacity-100' : 'opacity-0'}
                             ${index === currentCodeLine ? 'opacity-100' : ''}
-                            transition-opacity duration-150 ease-in-out
-                            ${line.includes("import") ? "text-purple-400 font-semibold" :
-                              line.includes("const") || line.includes("new") ? "text-blue-400 font-semibold" :
-                                line.includes("React") || line.includes("Node.js") || line.includes("TypeScript") ? "text-cyan-400" :
-                                  line.includes("FullStackDeveloper") ? "text-emerald-400 font-semibold" :
-                                    line.includes("//") ? "text-muted-foreground italic" :
-                                      line.includes("await") || line.includes("connect") ? "text-yellow-400" :
-                                        line.includes("'") ? "text-amber-400" :
-                                          "text-foreground"}
+                            ${getLineClass(line)}
                           `}
                         >
                           {index < currentCodeLine ? line : ''}
@@ -213,12 +237,12 @@ export const HeroSection = () => {
                   </div>
                 </div>
 
-                <div className="mt-3 text-xs font-mono text-muted-foreground text-center">
+                {/* <div className="mt-3 text-xs font-mono text-muted-foreground text-center">
                   STATUS:
                   <span className="text-emerald-400 ml-1">DEPLOYED</span> ·
                   <span className="text-cyan-400 ml-1">LIVE TRAFFIC</span> ·
                   <span className="text-amber-400 ml-1">OPEN SOURCE</span>
-                </div>
+                </div> */}
 
                 <motion.div className="absolute -bottom-3 -right-3 w-14 h-14 bg-gradient-to-r from-primary to-purple-600 rounded-xl flex items-center justify-center border-2 border-background shadow-2xl" animate={{ y: [0, -5, 0], rotate: [0, -2, 0], scale: [1, 1.03, 1] }} transition={{ duration: 4, repeat: Infinity }}>
                   <Code className="h-5 w-5 text-white" />
@@ -239,17 +263,11 @@ export const HeroSection = () => {
         </motion.div>
       </div>
 
-      <motion.div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center" initial={{ opacity: 0, y: 20 }} animate={{ opacity: [0, 1, 1, 0], y: [0, 6, 0, -6] }} transition={{ duration: 3, repeat: Infinity, repeatDelay: 0.5 }}>
-        
-        {/* <motion.div className="text-xs text-primary mb-3 flex items-center gap-2 px-4 py-2 rounded-full bg-background/80 backdrop-blur-sm border border-border shadow-lg" whileHover={{ scale: 1.05 }}>
-          <MousePointerClick className="h-3 w-3" />
-          <span>Explore Technical Portfolio</span>
-        </motion.div> */}
-
+      {/* <motion.div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center" initial={{ opacity: 0, y: 20 }} animate={{ opacity: [0, 1, 1, 0], y: [0, 6, 0, -6] }} transition={{ duration: 3, repeat: Infinity, repeatDelay: 0.5 }}>
         <motion.div animate={{ y: [0, 4, 0] }} transition={{ duration: 2, repeat: Infinity }} className="w-5 h-8 border-2 border-primary/30 rounded-full flex justify-center">
           <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity }} className="w-1 h-2 bg-primary rounded-full mt-2" />
         </motion.div>
-      </motion.div>
+      </motion.div> */}
     </section>
   );
 };

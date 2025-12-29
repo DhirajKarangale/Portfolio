@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function ProjectDetails({ open, setOpen, project }) {
+  const [imgLoaded, setImgLoaded] = useState(false);
   const handleClose = () => setOpen(false);
 
   const handleVisitSite = () => {
@@ -13,6 +14,10 @@ export default function ProjectDetails({ open, setOpen, project }) {
     document.body.style.overflow = open ? "hidden" : "auto";
     return () => (document.body.style.overflow = "auto");
   }, [open]);
+
+  useEffect(() => {
+    if (open) setImgLoaded(false);
+  }, [open, project?.gif]);
 
   return (
     <AnimatePresence mode="sync">
@@ -58,11 +63,19 @@ export default function ProjectDetails({ open, setOpen, project }) {
 
               {/* Demo GIF */}
               {project.gif && (
-                <img
-                  src={project.gif}
-                  alt={`${project.title} demo`}
-                  className="w-full rounded-xl object-cover shadow-md"
-                />
+                <div className="relative w-full h-[20vh] sm:h-[30vh] overflow-hidden rounded-xl">
+                  {!imgLoaded && (
+                    <div className="absolute w-full h-full object-cover shadow-md animate-pulse bg-white/10 rounded-xl">
+                    </div>
+                  )}
+                  <img
+                    src={project.gif}
+                    alt={`${project.title} demo`}
+                    onLoad={() => setImgLoaded(true)}
+                    className={`w-full rounded-xl object-cover shadow-md transition-opacity duration-300
+                     ${imgLoaded ? "opacity-100" : "opacity-0"}`}
+                  />
+                </div>
               )}
 
               {/* Category + Visit Button */}
