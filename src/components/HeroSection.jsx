@@ -33,23 +33,27 @@ export const HeroSection = () => {
 
   useEffect(() => {
     const currentLine = codeSnippets[currentCodeLine];
+
     if (displayedCode.length < currentLine.length) {
-      setTimeout(() => {
+      const t = setTimeout(() => {
         setDisplayedCode(currentLine.slice(0, displayedCode.length + 1));
       }, 30);
-    } else {
-      setTimeout(() => {
-        if (currentCodeLine < codeSnippets.length - 1) {
-          setCurrentCodeLine(prev => prev + 1);
-          setDisplayedCode("");
-        } else {
-          setTimeout(() => {
-            setCurrentCodeLine(0);
-            setDisplayedCode("");
-          }, 5000);
-        }
-      }, 800);
+      return () => clearTimeout(t);
     }
+
+    const t = setTimeout(() => {
+      if (currentCodeLine < codeSnippets.length - 1) {
+        setCurrentCodeLine((p) => p + 1);
+        setDisplayedCode("");
+      } else {
+        setTimeout(() => {
+          setCurrentCodeLine(0);
+          setDisplayedCode("");
+        }, 4000);
+      }
+    }, 700);
+
+    return () => clearTimeout(t);
   }, [displayedCode, currentCodeLine]);
 
   const handleViewResume = () => {
@@ -202,35 +206,30 @@ export const HeroSection = () => {
                   <div className="w-4 h-4 bg-green-400/20 rounded-full animate-pulse"></div>
                 </div>
 
-                <div className="font-mono text-sm bg-primary/5 rounded-lg border border-primary/10 h-[420px] sm:h-[380px] flex">
+                <div className="font-mono text-sm bg-primary/5 rounded-lg border border-primary/10 h-[650px] sm:h-[380px] flex">
                   <div className="p-2 w-full">
                     <div className="grid grid-cols-1 gap-1 h-full content-start select-none">
                       {codeSnippets.map((line, index) => (
                         <div
                           key={index}
-                          className={`
-                            min-h-[18px] flex items-start text-left
-                            whitespace-pre-wrap break-words leading-5
-                            transition-opacity duration-150 ease-in-out
-                            ${index < currentCodeLine ? 'opacity-100' : 'opacity-0'}
-                            ${index === currentCodeLine ? 'opacity-100' : ''}
-                            ${getLineClass(line)}
-                          `}
+                          className={`${getLineClass(line)} min-h-[18px] text-left`}
                         >
-                          {index < currentCodeLine ? line : ''}
-                          {index === currentCodeLine ? (
-                            <>
+                          {index < currentCodeLine && line}
+
+                          {index === currentCodeLine && (
+                            <span>
                               {displayedCode}
-                              <motion.span
-                                animate={{ opacity: [1, 0, 1] }}
-                                transition={{ duration: 0.8, repeat: Infinity }}
-                                className="ml-1 text-primary inline-block"
-                              >
-                                ▊
-                              </motion.span>
-                            </>
-                          ) : ''}
-                          {line === '' && ''}
+                              <span className="inline-block w-[1ch]">
+                                <motion.span
+                                  className={`${getLineClass(line)}`}
+                                  animate={{ opacity: [1, 0, 1] }}
+                                  transition={{ duration: 0.8, repeat: Infinity }}
+                                >
+                                  ▊
+                                </motion.span>
+                              </span>
+                            </span>
+                          )}
                         </div>
                       ))}
                     </div>
