@@ -206,7 +206,7 @@ export const HeroSection = () => {
                   <div className="w-4 h-4 bg-green-400/20 rounded-full animate-pulse"></div>
                 </div>
 
-                <div className="font-mono text-sm bg-primary/5 rounded-lg border border-primary/10 h-[600px] sm:h-[380px] flex">
+                <div className="font-mono text-sm bg-primary/5 rounded-lg border border-primary/10 h-[650px] sm:h-[380px] flex">
                   <div className="p-2 w-full">
                     <div className="grid grid-cols-1 gap-1 h-full content-start select-none">
                       {codeSnippets.map((line, index) => (
