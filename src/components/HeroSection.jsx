@@ -33,23 +33,27 @@ export const HeroSection = () => {
 
   useEffect(() => {
     const currentLine = codeSnippets[currentCodeLine];
+
     if (displayedCode.length < currentLine.length) {
-      setTimeout(() => {
+      const t = setTimeout(() => {
         setDisplayedCode(currentLine.slice(0, displayedCode.length + 1));
       }, 30);
-    } else {
-      setTimeout(() => {
-        if (currentCodeLine < codeSnippets.length - 1) {
-          setCurrentCodeLine(prev => prev + 1);
-          setDisplayedCode("");
-        } else {
-          setTimeout(() => {
-            setCurrentCodeLine(0);
-            setDisplayedCode("");
-          }, 5000);
-        }
-      }, 800);
+      return () => clearTimeout(t);
     }
+
+    const t = setTimeout(() => {
+      if (currentCodeLine < codeSnippets.length - 1) {
+        setCurrentCodeLine((p) => p + 1);
+        setDisplayedCode("");
+      } else {
+        setTimeout(() => {
+          setCurrentCodeLine(0);
+          setDisplayedCode("");
+        }, 4000);
+      }
+    }, 700);
+
+    return () => clearTimeout(t);
   }, [displayedCode, currentCodeLine]);
 
   const handleViewResume = () => {
@@ -208,29 +212,24 @@ export const HeroSection = () => {
                       {codeSnippets.map((line, index) => (
                         <div
                           key={index}
-                          className={`
-                            min-h-[18px] flex items-start 
-                            whitespace-pre-wrap break-words leading-5
-                            transition-opacity duration-150 ease-in-out
-                            ${index < currentCodeLine ? 'opacity-100' : 'opacity-0'}
-                            ${index === currentCodeLine ? 'opacity-100' : ''}
-                            ${getLineClass(line)}
-                          `}
+                          className={`${getLineClass(line)} min-h-[18px] text-left`}
                         >
-                          {index < currentCodeLine ? line : ''}
-                          {index === currentCodeLine ? (
-                            <>
+                          {index < currentCodeLine && line}
+
+                          {index === currentCodeLine && (
+                            <span>
                               {displayedCode}
-                              <motion.span
-                                animate={{ opacity: [1, 0, 1] }}
-                                transition={{ duration: 0.8, repeat: Infinity }}
-                                className="ml-1 text-primary inline-block"
-                              >
-                                ▊
-                              </motion.span>
-                            </>
-                          ) : ''}
-                          {line === '' && ''}
+                              <span className="inline-block w-[1ch]">
+                                <motion.span
+                                  className="text-primary"
+                                  animate={{ opacity: [1, 0, 1] }}
+                                  transition={{ duration: 0.8, repeat: Infinity }}
+                                >
+                                  ▊
+                                </motion.span>
+                              </span>
+                            </span>
+                          )}
                         </div>
                       ))}
                     </div>
