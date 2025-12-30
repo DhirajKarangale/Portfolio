@@ -221,7 +221,7 @@ export const HeroSection = () => {
                               {displayedCode}
                               <span className="inline-block w-[1ch]">
                                 <motion.span
-                                  className="text-primary"
+                                  className={`${getLineClass(line)}`}
                                   animate={{ opacity: [1, 0, 1] }}
                                   transition={{ duration: 0.8, repeat: Infinity }}
                                 >
