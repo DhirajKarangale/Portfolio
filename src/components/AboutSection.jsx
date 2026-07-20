@@ -77,7 +77,7 @@ export const AboutSection = () => {
 
   const tabContent = {
     personal: "Focused on building practical software systems and open-source projects that address real-world problems. Time is often spent exploring new tools, contributing to public codebases, and learning through real implementation.",
-    professional: "1.5+ years of experience working on production full-stack systems. Includes building APIs, frontend features, database-backed services, and improving performance using caching and efficient data flows.",
+    professional: "2+ years of experience working on production full-stack systems. Includes building APIs, frontend features, database-backed services, and improving performance using caching and efficient data flows.",
     approach: "Designs systems with clarity and operational stability in mind, prioritizing behavior under real usage over theoretical perfection."
   };
 

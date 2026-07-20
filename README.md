@@ -11,7 +11,7 @@ My work spans frontend architecture, backend APIs, real-time systems, and AI-pow
 
 ## About
 
-I’m a **Full-Stack Engineer with 1.5+ years of production experience**, currently working at **Infosys**.
+I’m a **Full-Stack Engineer with 2+ years of production experience**, currently working at **Infosys**.
 
 I work end-to-end across:
 - UI architecture & UX polish  

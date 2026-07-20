@@ -25,7 +25,7 @@ export const HeroSection = () => {
   ];
 
   const achievements = [
-    { number: "1.5+", label: "Years in Production", icon: <Shield className="h-3 w-3" /> },
+    { number: "2+", label: "Years in Production", icon: <Shield className="h-3 w-3" /> },
     { number: "160K+", label: "App Downloads", icon: <TrendingUp className="h-3 w-3" /> },
     { number: "2+", label: "npm Libraries", icon: <Zap className="h-3 w-3" /> },
     { number: "Finalist", label: "HackWithInfy", icon: <Award className="h-3 w-3" /> },
