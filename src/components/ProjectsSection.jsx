@@ -5,6 +5,37 @@ import { ArrowRight, Github, ChevronUp, Star, Code, Sparkles, Play, Eye } from "
 
 const projects = [
   {
+    id: 0,
+    title: "Jobora",
+    category: "AI Infrastructure",
+    description:
+      "Jobora is an Agentic AI job automation platform that discovers jobs across multiple platforms, evaluates candidate fit using LLMs, and automatically applies to eligible roles.\n\nThe system utilizes browser automation pipelines using Puppeteer to scrape job postings and submit applications. It features a distributed processing pipeline designed with Node.js, Python, PostgreSQL, Redis, and LangGraph to clean, structure, and evaluate job data in real time.\n\nA comprehensive React-based analytics dashboard is included to track eligible opportunities, application status, and provide actionable job insights through interactive visualizations.",
+    image: "/projects/jobora_logo.png",
+    gif: "/projects/jobora_gif.gif",
+    tags: [
+      "Node.js",
+      "Python",
+      "LangGraph",
+      "Puppeteer",
+      "PostgreSQL",
+      "Redis",
+      "React",
+      "LLMs",
+      "Redis"
+    ],
+    demoUrl: "#",
+    githubUrl: "https://github.com/DhirajKarangale/Jobora",
+    featured: true,
+    accentColor: "from-blue-500 to-indigo-600",
+    status: "Live",
+    highlights: [
+      "Built an Agentic AI job automation platform with LLM-based evaluation",
+      "Developed browser automation pipelines using Puppeteer for scraping and applications",
+      "Designed a distributed processing pipeline with LangGraph, PostgreSQL, and Redis",
+      "Built a React-based analytics dashboard with interactive visualizations"
+    ]
+  },
+  {
     id: 1,
     title: "SatyaMark",
     category: "AI Infrastructure",
