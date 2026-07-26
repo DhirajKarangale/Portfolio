@@ -6,7 +6,7 @@ import { ArrowRight, Github, ChevronUp, Star, Code, Sparkles, Play, Eye } from "
 const projects = [
   {
     id: 0,
-    title: "Jobora",
+    title: "Jobora DK",
     category: "AI Infrastructure",
     description:
       "Jobora is an Agentic AI job automation platform that discovers jobs across multiple platforms, evaluates candidate fit using LLMs, and automatically applies to eligible roles.\n\nThe system utilizes browser automation pipelines using Puppeteer to scrape job postings and submit applications. It features a distributed processing pipeline designed with Node.js, Python, PostgreSQL, Redis, and LangGraph to clean, structure, and evaluate job data in real time.\n\nA comprehensive React-based analytics dashboard is included to track eligible opportunities, application status, and provide actionable job insights through interactive visualizations.",
