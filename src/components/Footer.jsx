@@ -100,6 +100,7 @@ export const Footer = () => {
                   >
                     <a
                       href={link.href}
+                      aria-label={`Go to ${link.name}`}
                       className="hover:text-gray-900 dark:hover:text-white transition-colors duration-300 text-sm text-gray-600 dark:text-gray-300"
                     >
                       {link.name}
@@ -123,6 +124,7 @@ export const Footer = () => {
                     {info.href ? (
                       <a
                         href={info.href}
+                        aria-label={`Contact via ${info.text}`}
                         className="hover:text-gray-900 dark:hover:text-white transition-colors duration-300 text-gray-600 dark:text-gray-300"
                       >
                         {info.text}

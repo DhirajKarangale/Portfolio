@@ -1,7 +1,7 @@
 import { Code, Award, Download, Shield, Zap, TrendingUp, Mail } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
-
+import { personalData } from "../../utils/data/personal-data";
 export const HeroSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -16,7 +16,7 @@ export const HeroSection = () => {
     "  stack: ['React', 'Node', 'Spring Boot'],",
     "  data: ['PostgreSQL', 'Redis'],",
     "  realtime: ['WebSockets'],",
-    "  ai: ['RAG', 'LangChain'],",
+    "  ai: ['Agentic AI', 'FastAPI'],",
     "  openSource: true,",
     "});",
     "",
@@ -25,9 +25,9 @@ export const HeroSection = () => {
   ];
 
   const achievements = [
-    { number: "2+", label: "Years in Production", icon: <Shield className="h-3 w-3" /> },
-    { number: "160K+", label: "App Downloads", icon: <TrendingUp className="h-3 w-3" /> },
-    { number: "2+", label: "npm Libraries", icon: <Zap className="h-3 w-3" /> },
+    { number: "1K+", label: "LeetCode Solved", icon: <Shield className="h-3 w-3" /> },
+    { number: "1.4M+", label: "Play Store Downloads", icon: <TrendingUp className="h-3 w-3" /> },
+    { number: "4.6K+", label: "npm Downloads", icon: <Zap className="h-3 w-3" /> },
     { number: "Finalist", label: "HackWithInfy", icon: <Award className="h-3 w-3" /> },
   ];
 
@@ -57,7 +57,7 @@ export const HeroSection = () => {
   }, [displayedCode, currentCodeLine]);
 
   const handleViewResume = () => {
-    window.open('https://github.com/DhirajKarangale/Resume/blob/main/DhirajKarangale.pdf', '_blank', 'noopener,noreferrer');
+    window.open(personalData.resume, '_blank', 'noopener,noreferrer');
   };
 
   const getLineClass = (line) => {
@@ -153,27 +153,28 @@ export const HeroSection = () => {
                 <div key={index} className="text-center p-4 rounded-xl bg-background/60 border border-border/50 backdrop-blur-sm hover:border-primary/30 transition-all duration-300">
                   <div className="flex items-center justify-center gap-2 mb-2">
                     {achievement.icon}
-                    <div className="text-2xl font-bold text-foreground">{achievement.number}</div>
+                    <h3 className="text-2xl font-bold text-foreground">{achievement.number}</h3>
                   </div>
-                  <div className="text-xs text-muted-foreground">{achievement.label}</div>
+                  <p className="text-xs text-muted-foreground">{achievement.label}</p>
                 </div>
               ))}
             </motion.div>
 
             <motion.div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start" variants={{ hidden: { y: 30, opacity: 0 }, visible: { y: 0, opacity: 1, transition: { duration: 0.8 } } }}>
-              <motion.a href="#projects" className="group relative overflow-hidden px-8 py-4 rounded-xl font-semibold bg-gradient-to-r from-primary to-purple-600 text-primary-foreground shadow-lg hover:shadow-xl text-sm flex items-center justify-center gap-3" whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }}>
+              <motion.a href="#projects" aria-label="View Production Work" className="group relative overflow-hidden px-8 py-4 rounded-xl font-semibold bg-gradient-to-r from-primary to-purple-600 text-primary-foreground shadow-lg hover:shadow-xl text-sm flex items-center justify-center gap-3" whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }}>
                 <Code className="h-5 w-5" />
                 <span>View Production Work</span>
                 <TrendingUp className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </motion.a>
 
-              <motion.a href="#contact" className="group relative overflow-hidden px-8 py-4 rounded-xl font-semibold border border-primary/50 text-foreground hover:border-primary transition-all duration-300 bg-background/80 backdrop-blur-sm text-sm flex items-center justify-center gap-3" whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }}>
+              <motion.a href="#contact" aria-label="Contact Me" className="group relative overflow-hidden px-8 py-4 rounded-xl font-semibold border border-primary/50 text-foreground hover:border-primary transition-all duration-300 bg-background/80 backdrop-blur-sm text-sm flex items-center justify-center gap-3" whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }}>
                 <Mail className="h-4 w-4" />
                 <span>Contact Me</span>
               </motion.a>
 
               <motion.button
                 onClick={handleViewResume}
+                aria-label="View Resume"
                 className="group relative overflow-hidden px-6 py-4 rounded-xl font-semibold border border-border text-muted-foreground hover:border-primary/30 transition-all duration-300 bg-background/60 backdrop-blur-sm text-sm flex items-center justify-center gap-2"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
