@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, memo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Import your images
@@ -166,7 +166,7 @@ const iconImages = {
   jenkins: jenkinsIcon,
 };
 
-const SkillBar = ({ level }) => (
+const SkillBar = memo(({ level }) => (
   <div className="w-full h-3 bg-secondary/20 rounded-full overflow-hidden">
     <motion.div
       initial={{ width: 0 }}
@@ -178,9 +178,9 @@ const SkillBar = ({ level }) => (
         }`}
     />
   </div>
-);
+));
 
-const InfiniteScrollSkills = ({ skills }) => {
+const InfiniteScrollSkills = memo(({ skills }) => {
   const duplicatedSkills = [...skills, ...skills, ...skills];
 
   return (
@@ -193,7 +193,7 @@ const InfiniteScrollSkills = ({ skills }) => {
         {duplicatedSkills.map((skill, index) => (
           <div key={`${skill.name}-${index}`} className="flex-shrink-0 flex flex-col items-center gap-2">
             <div className="w-16 h-16 rounded-full bg-card border-2 border-primary/50 flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
-              <img src={iconImages[skill.icon]} alt={skill.name} className="w-8 h-8 object-contain" />
+              <img loading="lazy" decoding="async" src={iconImages[skill.icon]} alt={skill.name} className="w-8 h-8 object-contain" />
             </div>
             <span className="text-sm font-medium text-center">
               {skill.name.split("\n").map((line, i) => (
@@ -214,7 +214,7 @@ const InfiniteScrollSkills = ({ skills }) => {
         {[...duplicatedSkills].reverse().map((skill, index) => (
           <div key={`${skill.name}-reverse-${index}`} className="flex-shrink-0 flex flex-col items-center gap-2">
             <div className="w-16 h-16 rounded-full bg-card border-2 border-primary/50 flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
-              <img src={iconImages[skill.icon]} alt={skill.name} className="w-8 h-8 object-contain" />
+              <img loading="lazy" decoding="async" src={iconImages[skill.icon]} alt={skill.name} className="w-8 h-8 object-contain" />
             </div>
             <span className="text-sm font-medium text-center">
               {skill.name.split("\n").map((line, i) => (
@@ -228,7 +228,7 @@ const InfiniteScrollSkills = ({ skills }) => {
       </motion.div>
     </div>
   );
-};
+});
 
 export const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -285,7 +285,7 @@ export const SkillsSection = () => {
                 >
                   <div className="flex items-start gap-4 mb-5">
                     <div className="w-12 h-12 rounded-full bg-card border-2 border-primary/50 flex items-center justify-center">
-                      <img src={iconImages[skill.icon]} alt={skill.name} className="w-6 h-6 object-contain" />
+                      <img loading="lazy" decoding="async" src={iconImages[skill.icon]} alt={skill.name} className="w-6 h-6 object-contain" />
                     </div>
                     <div className="flex-1">
                       <div className="flex justify-between items-center mb-2">

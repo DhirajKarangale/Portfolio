@@ -21,9 +21,16 @@ export const StarBackground = () => {
   }, []);
 
   const generateStars = () => {
-    const numberOfStars = Math.floor(
-      (window.innerWidth * window.innerHeight) / 10000
-    );
+    const isMobile = window.innerWidth < 768;
+    const density = isMobile ? 25000 : 10000;
+    
+    // Check if user prefers reduced motion
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    // If reduced motion, drastically reduce stars and remove animations
+    const numberOfStars = prefersReducedMotion 
+      ? Math.floor((window.innerWidth * window.innerHeight) / 50000)
+      : Math.floor((window.innerWidth * window.innerHeight) / density);
 
     const newStars = [];
 
@@ -34,7 +41,7 @@ export const StarBackground = () => {
         x: Math.random() * 100,
         y: Math.random() * 100,
         opacity: Math.random() * 0.5 + 0.5,
-        animationDuration: Math.random() * 4 + 2,
+        animationDuration: prefersReducedMotion ? 0 : Math.random() * 4 + 2,
       });
     }
 

@@ -224,10 +224,11 @@ export const ExperienceSection = () => {
                         <div className="relative h-10 w-10 sm:h-12 sm:w-12 rounded-full border-2 border-primary/20 group-hover:border-primary/50 overflow-hidden transition-all">
                           {experience.logo ? (
                             <img
+                              loading="lazy"
+                              decoding="async"
                               src={experience.logo}
                               alt={experience.company}
                               className="w-full h-full object-cover"
-                              loading="lazy"
                             />
                           ) : (
                             <div className="w-full h-full bg-primary/10 flex items-center justify-center text-primary/50">

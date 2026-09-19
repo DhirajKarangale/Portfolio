@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function ProjectDetails({ open, setOpen, project }) {
+const ProjectDetails = ({ open, setOpen, project }) => {
   const [imgLoaded, setImgLoaded] = useState(false);
   const handleClose = () => setOpen(false);
 
@@ -69,6 +69,8 @@ export default function ProjectDetails({ open, setOpen, project }) {
                     </div>
                   )}
                   <img
+                    loading="lazy"
+                    decoding="async"
                     src={project.gif}
                     alt={`${project.title} demo`}
                     onLoad={() => setImgLoaded(true)}
@@ -121,4 +123,6 @@ export default function ProjectDetails({ open, setOpen, project }) {
       )}
     </AnimatePresence>
   );
-}
+};
+
+export default React.memo(ProjectDetails);
