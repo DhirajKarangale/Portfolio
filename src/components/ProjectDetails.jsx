@@ -49,6 +49,7 @@ const ProjectDetails = ({ open, setOpen, project }) => {
 
               <button
                 onClick={handleClose}
+                aria-label="Close Project Details"
                 className="flex items-center gap-1 text-white/80 hover:text-white transition px-2 py-1 rounded-md hover:bg-white/10"
               >
                 <X size={20} />
@@ -89,6 +90,7 @@ const ProjectDetails = ({ open, setOpen, project }) => {
                 {project.link && (
                   <button
                     onClick={handleVisitSite}
+                    aria-label={`Visit Site for ${project.title}`}
                     className="px-3 py-1 text-xs rounded-md border border-white/30 
                   bg-white/10 backdrop-blur-sm hover:bg-white/20 transition"
                   >
@@ -99,7 +101,7 @@ const ProjectDetails = ({ open, setOpen, project }) => {
 
               {/* Overview */}
               <section>
-                <h4 className="text-primary font-medium mb-1">Overview</h4>
+                <h3 className="text-primary font-medium mb-1">Overview</h3>
                 <p className="text-sm text-gray-200 leading-relaxed">
                   {project.description}
                 </p>
@@ -108,7 +110,7 @@ const ProjectDetails = ({ open, setOpen, project }) => {
               {/* Highlights */}
               {project.highlights && (
                 <section>
-                  <h4 className="text-primary font-medium mb-1">Key Work</h4>
+                  <h3 className="text-primary font-medium mb-1">Key Work</h3>
                   <ul className="list-disc1 list-inside space-y-1 text-sm text-gray-200 text-left1">
                     {project.highlights.map((item, idx) => (
                       <li key={idx}>{item}</li>

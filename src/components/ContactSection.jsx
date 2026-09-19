@@ -45,6 +45,7 @@ export const ContactSection = () => {
 
                 <a
                   href="mailto:dakarangale02@gmail.com"
+                  aria-label="Email Address"
                   className="text-sm sm:text-base font-medium hover:text-primary break-all pl-[44px] sm:pl-0"
                 >
                   dakarangale02@gmail.com
@@ -63,6 +64,7 @@ export const ContactSection = () => {
 
                 <a
                   href="tel:+917620320595"
+                  aria-label="Phone Number"
                   className="text-sm sm:text-base font-medium hover:text-primary pl-[44px] sm:pl-0"
                 >
                   +91 7620320595
