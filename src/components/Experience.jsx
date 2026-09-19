@@ -17,12 +17,12 @@ export const ExperienceSection = () => {
       duration: "Aug 2024 - Present",
       location: "India",
       highlights: [
-        "Owned features end-to-end from requirements to deployment",
-        "Built REST APIs with 99.9% uptime",
-        "Reduced backend response time by ~25% using Redis caching",
-        "Improved frontend load time from 3.5s → 2.1s",
+        "Built a React library to export complex dashboards into fully editable PPT and PDF documents, adopted across 7+ projects",
+        "Developed an AI-powered platform transforming meeting transcripts and videos into structured Process Design Documents in under 5 minutes",
+        "Led system design for micro-frontend applications using React and Webpack Module Federation",
+        "Optimized MySQL queries and implemented database indexing, reducing API response times by 25%",
       ],
-      tech: ["React", "Node.js", "Spring Boot", "PostgreSQL", "Redis"],
+      tech: ["React", "Node.js", "Python", "Webpack", "Spring Boot", "MySQL", "AWS"],
       logo: "/experience/infosys.jpg"
     },
     {
@@ -34,10 +34,10 @@ export const ExperienceSection = () => {
       highlights: [
         "Built responsive, multi-user UIs",
         "Integrated Google OAuth 2.0",
-        "Implemented WebSocket-driven live updates",
-        "Reduced bandwidth usage by ~35%",
+        "Implemented WebSocket-driven live updates ensuring real-time state synchronization for 10K+ users",
+        "Integrated JWT authentication and session management workflows to strictly secure application access",
       ],
-      tech: ["React", "Tailwind", "WebSockets", "OAuth"],
+      tech: ["React", "Tailwind", "WebSockets", "OAuth", "JWT"],
       logo: "/experience/saraltech.jpg"
     },
   ];
@@ -189,9 +189,9 @@ export const ExperienceSection = () => {
                   whileHover={{ y: -5 }}
                 >
                   <div className="relative inline-block mb-3">
-                    <p className="font-semibold text-left">
+                    <h3 className="font-semibold text-left text-lg text-foreground">
                       {experience.role}
-                    </p>
+                    </h3>
                     <span className="absolute left-0 -bottom-1 w-full h-[2px]
                    bg-gradient-to-r from-primary to-purple-500 rounded-full" />
                   </div>
@@ -224,10 +224,11 @@ export const ExperienceSection = () => {
                         <div className="relative h-10 w-10 sm:h-12 sm:w-12 rounded-full border-2 border-primary/20 group-hover:border-primary/50 overflow-hidden transition-all">
                           {experience.logo ? (
                             <img
-                              src={experience.logo}
-                              alt={experience.company}
-                              className="w-full h-full object-cover"
                               loading="lazy"
+                              decoding="async"
+                              src={experience.logo}
+                              alt={`${experience.company} - ${experience.role} by Dhiraj Karangale`}
+                              className="w-full h-full object-cover"
                             />
                           ) : (
                             <div className="w-full h-full bg-primary/10 flex items-center justify-center text-primary/50">
@@ -236,7 +237,7 @@ export const ExperienceSection = () => {
                           )}
                         </div>
                         <div>
-                          <p className="font-medium text-sm sm:text-base">{experience.company}</p>
+                          <h4 className="font-medium text-sm sm:text-base text-foreground">{experience.company}</h4>
                           <p className="text-xs sm:text-sm text-muted-foreground">{experience.location}</p>
                         </div>
                         <div>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, memo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Import your images
@@ -54,6 +54,8 @@ import jenkinsIcon from "@/assets/icons/jenkins.png";
 const skills = [
   // Frontend Engineering
   { name: "React", level: 88, category: "frontend", icon: "react" },
+  { name: "Webpack Module\nFederation", level: 85, category: "frontend", icon: "javascript" },
+  { name: "Micro-frontends", level: 85, category: "frontend", icon: "react" },
   { name: "TypeScript", level: 85, category: "frontend", icon: "typescript" },
   { name: "JavaScript", level: 90, category: "frontend", icon: "javascript" },
   { name: "Redux Toolkit", level: 82, category: "frontend", icon: "redux" },
@@ -68,6 +70,7 @@ const skills = [
   // Backend & APIs
   { name: "Node.js", level: 90, category: "backend", icon: "nodejs" },
   { name: "Express.js", level: 88, category: "backend", icon: "express" },
+  { name: "FastAPI", level: 85, category: "backend", icon: "python" },
   { name: "REST APIs", level: 90, category: "backend", icon: "restapi" },
   { name: "WebSockets", level: 85, category: "backend", icon: "websocket" },
   { name: "Socket.IO", level: 85, category: "backend", icon: "socketio" },
@@ -90,8 +93,11 @@ const skills = [
   { name: "Hugging Face", level: 78, category: "ai", icon: "huggingface" },
   { name: "RAG Pipelines", level: 82, category: "ai", icon: "rag" },
   { name: "Search-Augmented\nLLM Pipelines", level: 80, category: "ai", icon: "searchllm" },
+  { name: "Agentic AI", level: 85, category: "ai", icon: "searchllm" },
+  { name: "Claude", level: 85, category: "ai", icon: "searchllm" },
 
   // DevOps & Tooling
+  { name: "Puppeteer", level: 85, category: "tools", icon: "javascript" },
   { name: "Git", level: 90, category: "tools", icon: "git" },
   { name: "GitHub", level: 90, category: "tools", icon: "github" },
   { name: "Postman", level: 85, category: "tools", icon: "postman" },
@@ -160,7 +166,7 @@ const iconImages = {
   jenkins: jenkinsIcon,
 };
 
-const SkillBar = ({ level }) => (
+const SkillBar = memo(({ level }) => (
   <div className="w-full h-3 bg-secondary/20 rounded-full overflow-hidden">
     <motion.div
       initial={{ width: 0 }}
@@ -172,9 +178,9 @@ const SkillBar = ({ level }) => (
         }`}
     />
   </div>
-);
+));
 
-const InfiniteScrollSkills = ({ skills }) => {
+const InfiniteScrollSkills = memo(({ skills }) => {
   const duplicatedSkills = [...skills, ...skills, ...skills];
 
   return (
@@ -187,7 +193,7 @@ const InfiniteScrollSkills = ({ skills }) => {
         {duplicatedSkills.map((skill, index) => (
           <div key={`${skill.name}-${index}`} className="flex-shrink-0 flex flex-col items-center gap-2">
             <div className="w-16 h-16 rounded-full bg-card border-2 border-primary/50 flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
-              <img src={iconImages[skill.icon]} alt={skill.name} className="w-8 h-8 object-contain" />
+              <img loading="lazy" decoding="async" src={iconImages[skill.icon]} alt={skill.name} className="w-8 h-8 object-contain" />
             </div>
             <span className="text-sm font-medium text-center">
               {skill.name.split("\n").map((line, i) => (
@@ -208,7 +214,7 @@ const InfiniteScrollSkills = ({ skills }) => {
         {[...duplicatedSkills].reverse().map((skill, index) => (
           <div key={`${skill.name}-reverse-${index}`} className="flex-shrink-0 flex flex-col items-center gap-2">
             <div className="w-16 h-16 rounded-full bg-card border-2 border-primary/50 flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
-              <img src={iconImages[skill.icon]} alt={skill.name} className="w-8 h-8 object-contain" />
+              <img loading="lazy" decoding="async" src={iconImages[skill.icon]} alt={skill.name} className="w-8 h-8 object-contain" />
             </div>
             <span className="text-sm font-medium text-center">
               {skill.name.split("\n").map((line, i) => (
@@ -222,7 +228,7 @@ const InfiniteScrollSkills = ({ skills }) => {
       </motion.div>
     </div>
   );
-};
+});
 
 export const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -242,7 +248,7 @@ export const SkillsSection = () => {
             My Skills
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Technologies I've mastered and my proficiency levels
+            I build robust, scalable systems using modern technologies like React, Node.js, and PostgreSQL. Here is a detailed breakdown of my technical stack and proficiency levels.
           </p>
         </motion.div>
 
@@ -279,7 +285,7 @@ export const SkillsSection = () => {
                 >
                   <div className="flex items-start gap-4 mb-5">
                     <div className="w-12 h-12 rounded-full bg-card border-2 border-primary/50 flex items-center justify-center">
-                      <img src={iconImages[skill.icon]} alt={skill.name} className="w-6 h-6 object-contain" />
+                      <img loading="lazy" decoding="async" src={iconImages[skill.icon]} alt={skill.name} className="w-6 h-6 object-contain" />
                     </div>
                     <div className="flex-1">
                       <div className="flex justify-between items-center mb-2">

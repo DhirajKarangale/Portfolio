@@ -8,10 +8,10 @@ export const AboutSection = () => {
   const [counter, setCounter] = useState(0);
 
   const achievements = [
-    { number: "1.5", label: "Years in Production", icon: <Calendar className="h-5 w-5" />, suffix: "+" },
-    { number: "160K", label: "Users Reached", icon: <Target className="h-5 w-5" />, suffix: "+" },
-    { number: "2", label: "Open-Source Libraries", icon: <Code className="h-5 w-5" />, suffix: "+" },
-    { number: "Finalist", label: "HackWithInfy", icon: <Star className="h-5 w-5" />, suffix: "" },
+    { number: "1K", label: "LeetCode Solved (Knight)", icon: <Code className="h-5 w-5" />, suffix: "+" },
+    { number: "1.4M", label: "Play Store Downloads", icon: <Download className="h-5 w-5" />, suffix: "+" },
+    { number: "4.6K", label: "npm Library Downloads", icon: <Target className="h-5 w-5" />, suffix: "+" },
+    { number: "Finalist", label: "HackWithInfy & Push To Prod", icon: <Star className="h-5 w-5" />, suffix: "" },
   ];
 
   const techStack = [
@@ -25,7 +25,8 @@ export const AboutSection = () => {
         "React Query",
         "Tailwind CSS",
         "Framer Motion",
-        "React Flow"
+        "Webpack Module Federation",
+        "Micro-frontends"
       ],
     },
     {
@@ -33,13 +34,12 @@ export const AboutSection = () => {
       items: [
         "Node.js",
         "Express",
+        "FastAPI",
         "Java",
         "Spring Boot",
         "REST APIs",
         "WebSockets",
         "JWT & Auth Flows",
-        "Stripe",
-        "Payment Gateways",
         "Redis (cache, streams)"
       ],
     },
@@ -49,7 +49,7 @@ export const AboutSection = () => {
         "Python",
         "RAG Pipelines",
         "LangChain",
-        "Agentic Workflows",
+        "Agentic AI",
         "Hugging Face Models",
         "PostgreSQL",
         "Docker",
@@ -69,15 +69,15 @@ export const AboutSection = () => {
   ];
 
   const socialLinks = [
-    { icon: <Github className="h-5 w-5" />, href: "https://github.com/DhirajKarangale" },
-    { icon: <Linkedin className="h-5 w-5" />, href: "https://www.linkedin.com/in/dhiraj-karangale-464ab91bb/" },
-    { icon: <Twitter className="h-5 w-5" />, href: "https://x.com/dhirajkarangale" },
-    { icon: <Mail className="h-5 w-5" />, href: "mailto:dakarangale02@gmail.com" }
+    { icon: <Github className="h-5 w-5" />, href: "https://github.com/DhirajKarangale", label: "GitHub Profile" },
+    { icon: <Linkedin className="h-5 w-5" />, href: "https://www.linkedin.com/in/dhiraj-karangale-464ab91bb/", label: "LinkedIn Profile" },
+    { icon: <Twitter className="h-5 w-5" />, href: "https://x.com/dhirajkarangale", label: "Twitter Profile" },
+    { icon: <Mail className="h-5 w-5" />, href: "mailto:dakarangale02@gmail.com", label: "Email Contact" }
   ];
 
   const tabContent = {
     personal: "Focused on building practical software systems and open-source projects that address real-world problems. Time is often spent exploring new tools, contributing to public codebases, and learning through real implementation.",
-    professional: "2+ years of experience working on production full-stack systems. Includes building APIs, frontend features, database-backed services, and improving performance using caching and efficient data flows.",
+    professional: "2+ years of full-time experience building scalable full-stack applications, AI-powered products, and developer tools. Includes building APIs, frontend features, micro-frontends, database-backed services, and improving performance using caching and efficient data flows.",
     approach: "Designs systems with clarity and operational stability in mind, prioritizing behavior under real usage over theoretical perfection."
   };
 
@@ -123,10 +123,10 @@ export const AboutSection = () => {
             </div>
             <span className="text-sm sm:text-base font-semibold text-primary tracking-wide">ABOUT ME</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6">
             <span className="bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">Transforming</span>
             <span className="block text-primary animate-pulse">Ideas Into Reality</span>
-          </h1>
+          </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Building full-stack systems with a focus on <span className="text-primary font-semibold">performance</span>, <span className="text-primary font-semibold">reliability</span>, and <span className="text-primary font-semibold">real-world usage</span>
           </p>
@@ -148,7 +148,7 @@ export const AboutSection = () => {
                   {/* Profile Image */}
                   <div className="relative flex-shrink-0">
                     <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden border-4 border-primary/20 shadow-2xl transition-all duration-500 group-hover:border-primary/40 group-hover:scale-105 md:group-hover:scale-110 relative">
-                      <img src="/profile-logo.png" alt="Dhiraj Karangale" className="w-full h-full object-cover" />
+                      <img loading="lazy" decoding="async" src="/profile-logo.webp" alt="Dhiraj Karangale - Full Stack Developer & AI Engineer at Infosys" className="w-full h-full object-cover" />
                       <div className="absolute -bottom-2 -right-2 w-6 h-6 sm:w-8 sm:h-8 bg-green-500 rounded-full border-4 border-background flex items-center justify-center">
                         <div className="w-2 h-2 bg-green-300 rounded-full animate-pulse" />
                       </div>
@@ -158,7 +158,7 @@ export const AboutSection = () => {
                   {/* Achievements */}
                   <div className="flex-1 text-center md:text-left">
                     <h2 className="text-2xl sm:text-3xl font-bold mb-1 sm:mb-2">Dhiraj Karangale</h2>
-                    <p className="text-primary text-base sm:text-lg font-semibold mb-3 sm:mb-4">Full-Stack Engineer</p>
+                    <h3 className="text-primary text-base sm:text-lg font-semibold mb-3 sm:mb-4">Full-Stack Engineer at Infosys</h3>
                     <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-4 sm:mb-6">
                       {achievements.map((achievement, index) => (
                         <div key={index} className={`p-2 sm:p-3 rounded-xl bg-background/50 border border-border transition-all duration-300 hover:scale-105 hover:border-primary/30 ${counter === index ? 'bg-primary/10 border-primary/50' : ''}`}>
@@ -258,7 +258,7 @@ export const AboutSection = () => {
                 <h4 className="font-semibold mb-2 text-center text-sm sm:text-base">Quick Connect</h4>
                 <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
                   {socialLinks.map((social, index) => (
-                    <a key={index} href={social.href} className="p-2 bg-background rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300 hover:scale-110">{social.icon}</a>
+                    <a key={index} href={social.href} aria-label={social.label} className="p-2 bg-background rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300 hover:scale-110">{social.icon}</a>
                   ))}
                 </div>
               </div>

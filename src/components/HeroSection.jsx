@@ -144,7 +144,7 @@ export const HeroSection = () => {
 
             <motion.p className="text-lg sm:text-xl text-muted-foreground mt-6 leading-relaxed max-w-2xl" variants={{ hidden: { y: 30, opacity: 0 }, visible: { y: 0, opacity: 1, transition: { duration: 0.8 } } }}>
               I design and ship <span className="text-primary font-semibold">production-grade systems</span> —
-              from UI architecture and APIs to databases, caching, and real-time pipelines.
+              from React UI architecture and Node.js APIs to PostgreSQL databases, Redis caching, and real-time AI pipelines.
               Focused on reliability, performance, and systems that survive beyond localhost.
             </motion.p>
 
