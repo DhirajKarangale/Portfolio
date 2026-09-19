@@ -69,10 +69,10 @@ export const AboutSection = () => {
   ];
 
   const socialLinks = [
-    { icon: <Github className="h-5 w-5" />, href: "https://github.com/DhirajKarangale" },
-    { icon: <Linkedin className="h-5 w-5" />, href: "https://www.linkedin.com/in/dhiraj-karangale-464ab91bb/" },
-    { icon: <Twitter className="h-5 w-5" />, href: "https://x.com/dhirajkarangale" },
-    { icon: <Mail className="h-5 w-5" />, href: "mailto:dakarangale02@gmail.com" }
+    { icon: <Github className="h-5 w-5" />, href: "https://github.com/DhirajKarangale", label: "GitHub Profile" },
+    { icon: <Linkedin className="h-5 w-5" />, href: "https://www.linkedin.com/in/dhiraj-karangale-464ab91bb/", label: "LinkedIn Profile" },
+    { icon: <Twitter className="h-5 w-5" />, href: "https://x.com/dhirajkarangale", label: "Twitter Profile" },
+    { icon: <Mail className="h-5 w-5" />, href: "mailto:dakarangale02@gmail.com", label: "Email Contact" }
   ];
 
   const tabContent = {
@@ -123,10 +123,10 @@ export const AboutSection = () => {
             </div>
             <span className="text-sm sm:text-base font-semibold text-primary tracking-wide">ABOUT ME</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6">
             <span className="bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">Transforming</span>
             <span className="block text-primary animate-pulse">Ideas Into Reality</span>
-          </h1>
+          </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Building full-stack systems with a focus on <span className="text-primary font-semibold">performance</span>, <span className="text-primary font-semibold">reliability</span>, and <span className="text-primary font-semibold">real-world usage</span>
           </p>
@@ -148,7 +148,7 @@ export const AboutSection = () => {
                   {/* Profile Image */}
                   <div className="relative flex-shrink-0">
                     <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden border-4 border-primary/20 shadow-2xl transition-all duration-500 group-hover:border-primary/40 group-hover:scale-105 md:group-hover:scale-110 relative">
-                      <img loading="lazy" decoding="async" src="/profile-logo.png" alt="Dhiraj Karangale" className="w-full h-full object-cover" />
+                      <img loading="lazy" decoding="async" src="/profile-logo.webp" alt="Dhiraj Karangale - Full Stack Developer & AI Engineer at Infosys" className="w-full h-full object-cover" />
                       <div className="absolute -bottom-2 -right-2 w-6 h-6 sm:w-8 sm:h-8 bg-green-500 rounded-full border-4 border-background flex items-center justify-center">
                         <div className="w-2 h-2 bg-green-300 rounded-full animate-pulse" />
                       </div>
@@ -158,7 +158,7 @@ export const AboutSection = () => {
                   {/* Achievements */}
                   <div className="flex-1 text-center md:text-left">
                     <h2 className="text-2xl sm:text-3xl font-bold mb-1 sm:mb-2">Dhiraj Karangale</h2>
-                    <p className="text-primary text-base sm:text-lg font-semibold mb-3 sm:mb-4">Full-Stack Engineer</p>
+                    <h3 className="text-primary text-base sm:text-lg font-semibold mb-3 sm:mb-4">Full-Stack Engineer at Infosys</h3>
                     <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-4 sm:mb-6">
                       {achievements.map((achievement, index) => (
                         <div key={index} className={`p-2 sm:p-3 rounded-xl bg-background/50 border border-border transition-all duration-300 hover:scale-105 hover:border-primary/30 ${counter === index ? 'bg-primary/10 border-primary/50' : ''}`}>
@@ -258,7 +258,7 @@ export const AboutSection = () => {
                 <h4 className="font-semibold mb-2 text-center text-sm sm:text-base">Quick Connect</h4>
                 <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
                   {socialLinks.map((social, index) => (
-                    <a key={index} href={social.href} className="p-2 bg-background rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300 hover:scale-110">{social.icon}</a>
+                    <a key={index} href={social.href} aria-label={social.label} className="p-2 bg-background rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300 hover:scale-110">{social.icon}</a>
                   ))}
                 </div>
               </div>

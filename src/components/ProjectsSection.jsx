@@ -415,7 +415,7 @@ export const ProjectsSection = () => {
                   <div className="relative h-48 overflow-hidden">
                     <motion.img
                       src={project.image}
-                      alt={project.title}
+                      alt={`${project.title} - ${project.category} Project by Dhiraj Karangale`}
                       className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       loading="lazy"
                     />
@@ -451,6 +451,7 @@ export const ProjectsSection = () => {
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                         className="p-3 rounded-full backdrop-blur-sm border bg-white/20 text-white border-white/30 hover:bg-white/30 transition-all duration-300"
+                        aria-label="Play demo video"
                       >
                         <Play size={20} />
                       </motion.button>
@@ -472,6 +473,7 @@ export const ProjectsSection = () => {
                             return;
                           }
                         }}
+                        aria-label="View source code on GitHub"
                       >
                         <Code size={20} />
                       </motion.a>
@@ -534,6 +536,7 @@ export const ProjectsSection = () => {
                           : "bg-primary text-primary-foreground hover:bg-primary/90"
                           }`}
                         onClick={(e) => project.demoUrl === "#" && e.preventDefault()}
+                        aria-label={`View Live Demo for ${project.title}`}
                       >
                         <Eye size={16} />
                         {project.demoUrl === "#" ? "Coming Soon" : "Live Demo"}
@@ -550,9 +553,10 @@ export const ProjectsSection = () => {
                           : "bg-background text-foreground border-border hover:border-primary hover:bg-primary/5"
                           }`}
                         onClick={(e) => project.githubUrl === "#" && e.preventDefault()}
+                        aria-label={`View GitHub Repository for ${project.title}`}
                       >
                         <Github size={16} />
-                        Code
+                        {project.githubUrl === "#" ? "Private Repo" : "Code"}
                       </motion.a>
                     </div>
                   </div>

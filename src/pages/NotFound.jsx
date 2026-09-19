@@ -1,9 +1,14 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 export const NotFound = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-black text-white relative overflow-hidden">
+      <Helmet>
+        <title>404 Not Found - Dhiraj Karangale</title>
+        <meta name="description" content="The page you are looking for does not exist." />
+      </Helmet>
       {/* Neon background glow */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl" />

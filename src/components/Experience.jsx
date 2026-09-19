@@ -189,9 +189,9 @@ export const ExperienceSection = () => {
                   whileHover={{ y: -5 }}
                 >
                   <div className="relative inline-block mb-3">
-                    <p className="font-semibold text-left">
+                    <h3 className="font-semibold text-left text-lg text-foreground">
                       {experience.role}
-                    </p>
+                    </h3>
                     <span className="absolute left-0 -bottom-1 w-full h-[2px]
                    bg-gradient-to-r from-primary to-purple-500 rounded-full" />
                   </div>
@@ -227,7 +227,7 @@ export const ExperienceSection = () => {
                               loading="lazy"
                               decoding="async"
                               src={experience.logo}
-                              alt={experience.company}
+                              alt={`${experience.company} - ${experience.role} by Dhiraj Karangale`}
                               className="w-full h-full object-cover"
                             />
                           ) : (
@@ -237,7 +237,7 @@ export const ExperienceSection = () => {
                           )}
                         </div>
                         <div>
-                          <p className="font-medium text-sm sm:text-base">{experience.company}</p>
+                          <h4 className="font-medium text-sm sm:text-base text-foreground">{experience.company}</h4>
                           <p className="text-xs sm:text-sm text-muted-foreground">{experience.location}</p>
                         </div>
                         <div>

@@ -72,18 +72,13 @@ export const Navbar = () => {
       lastScrollYRef.current = currentScrollY;
 
       const sections = navItems.map((item) => item.href);
-      const scrollPosition = currentScrollY + 100;
 
       for (const section of sections) {
         const element = document.querySelector(section);
         if (element) {
-          const offsetTop = element.offsetTop;
-          const offsetHeight = element.offsetHeight;
-
-          if (
-            scrollPosition >= offsetTop &&
-            scrollPosition < offsetTop + offsetHeight
-          ) {
+          const rect = element.getBoundingClientRect();
+          // Check if the section is currently in the middle of the viewport
+          if (rect.top <= window.innerHeight / 3 && rect.bottom >= window.innerHeight / 3) {
             setActiveSection(section);
             break;
           }
@@ -94,6 +89,20 @@ export const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    const element = document.querySelector(href);
+    if (element) {
+      // Calculate header offset if needed, or just scroll into view
+      const y = element.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+    // Remove hash from URL without triggering a page reload
+    if (window.location.hash) {
+      window.history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+  };
 
   return (
     <>
@@ -180,6 +189,7 @@ export const Navbar = () => {
               <a
                 key={item.name}
                 href={item.href}
+                onClick={(e) => handleNavClick(e, item.href)}
                 className={cn(
                   "p-2 rounded-full transition-colors flex flex-col items-center",
                   activeSection === item.href

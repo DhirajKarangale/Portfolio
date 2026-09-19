@@ -248,7 +248,7 @@ export const SkillsSection = () => {
             My Skills
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Technologies I've mastered and my proficiency levels
+            I build robust, scalable systems using modern technologies like React, Node.js, and PostgreSQL. Here is a detailed breakdown of my technical stack and proficiency levels.
           </p>
         </motion.div>
 
