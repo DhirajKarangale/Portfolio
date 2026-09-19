@@ -13,15 +13,13 @@ const projects = [
     image: "/projects/jobora_logo.png",
     gif: "/projects/jobora_gif.gif",
     tags: [
-      "Node.js",
-      "Python",
-      "LangGraph",
+      "Agentic AI",
+      "LangChain",
       "Puppeteer",
       "PostgreSQL",
       "Redis",
       "React",
-      "LLMs",
-      "Redis"
+      "LLMs"
     ],
     demoUrl: "#",
     githubUrl: "https://github.com/DhirajKarangale/Jobora",
@@ -63,7 +61,7 @@ const projects = [
       "Designed multi-stage LLM verification pipelines",
       "Built RAG system for evidence retrieval and summarization",
       "Implemented Redis Streams + WebSockets for live result streaming",
-      "Published production-ready React SDK to npm"
+      "Published production-ready React SDK to npm with 3.6K+ downloads"
     ]
   },
   {
@@ -92,7 +90,7 @@ const projects = [
       "Converted live DOM layouts into structured PDF pages",
       "Generated editable PowerPoint slides from React dashboards",
       "Implemented smart pagination without breaking components",
-      "Designed minimal, production-ready React API"
+      "Designed minimal, production-ready React API with 1K+ npm downloads"
     ]
   },
   {

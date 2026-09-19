@@ -8,10 +8,10 @@ export const AboutSection = () => {
   const [counter, setCounter] = useState(0);
 
   const achievements = [
-    { number: "1.5", label: "Years in Production", icon: <Calendar className="h-5 w-5" />, suffix: "+" },
-    { number: "160K", label: "Users Reached", icon: <Target className="h-5 w-5" />, suffix: "+" },
-    { number: "2", label: "Open-Source Libraries", icon: <Code className="h-5 w-5" />, suffix: "+" },
-    { number: "Finalist", label: "HackWithInfy", icon: <Star className="h-5 w-5" />, suffix: "" },
+    { number: "1K", label: "LeetCode Solved (Knight)", icon: <Code className="h-5 w-5" />, suffix: "+" },
+    { number: "1.4M", label: "Play Store Downloads", icon: <Download className="h-5 w-5" />, suffix: "+" },
+    { number: "4.6K", label: "npm Library Downloads", icon: <Target className="h-5 w-5" />, suffix: "+" },
+    { number: "Finalist", label: "HackWithInfy & Push To Prod", icon: <Star className="h-5 w-5" />, suffix: "" },
   ];
 
   const techStack = [
@@ -25,7 +25,8 @@ export const AboutSection = () => {
         "React Query",
         "Tailwind CSS",
         "Framer Motion",
-        "React Flow"
+        "Webpack Module Federation",
+        "Micro-frontends"
       ],
     },
     {
@@ -33,13 +34,12 @@ export const AboutSection = () => {
       items: [
         "Node.js",
         "Express",
+        "FastAPI",
         "Java",
         "Spring Boot",
         "REST APIs",
         "WebSockets",
         "JWT & Auth Flows",
-        "Stripe",
-        "Payment Gateways",
         "Redis (cache, streams)"
       ],
     },
@@ -49,7 +49,7 @@ export const AboutSection = () => {
         "Python",
         "RAG Pipelines",
         "LangChain",
-        "Agentic Workflows",
+        "Agentic AI",
         "Hugging Face Models",
         "PostgreSQL",
         "Docker",
@@ -77,7 +77,7 @@ export const AboutSection = () => {
 
   const tabContent = {
     personal: "Focused on building practical software systems and open-source projects that address real-world problems. Time is often spent exploring new tools, contributing to public codebases, and learning through real implementation.",
-    professional: "2+ years of experience working on production full-stack systems. Includes building APIs, frontend features, database-backed services, and improving performance using caching and efficient data flows.",
+    professional: "2+ years of full-time experience building scalable full-stack applications, AI-powered products, and developer tools. Includes building APIs, frontend features, micro-frontends, database-backed services, and improving performance using caching and efficient data flows.",
     approach: "Designs systems with clarity and operational stability in mind, prioritizing behavior under real usage over theoretical perfection."
   };
 

@@ -54,6 +54,8 @@ import jenkinsIcon from "@/assets/icons/jenkins.png";
 const skills = [
   // Frontend Engineering
   { name: "React", level: 88, category: "frontend", icon: "react" },
+  { name: "Webpack Module\nFederation", level: 85, category: "frontend", icon: "javascript" },
+  { name: "Micro-frontends", level: 85, category: "frontend", icon: "react" },
   { name: "TypeScript", level: 85, category: "frontend", icon: "typescript" },
   { name: "JavaScript", level: 90, category: "frontend", icon: "javascript" },
   { name: "Redux Toolkit", level: 82, category: "frontend", icon: "redux" },
@@ -68,6 +70,7 @@ const skills = [
   // Backend & APIs
   { name: "Node.js", level: 90, category: "backend", icon: "nodejs" },
   { name: "Express.js", level: 88, category: "backend", icon: "express" },
+  { name: "FastAPI", level: 85, category: "backend", icon: "python" },
   { name: "REST APIs", level: 90, category: "backend", icon: "restapi" },
   { name: "WebSockets", level: 85, category: "backend", icon: "websocket" },
   { name: "Socket.IO", level: 85, category: "backend", icon: "socketio" },
@@ -90,8 +93,11 @@ const skills = [
   { name: "Hugging Face", level: 78, category: "ai", icon: "huggingface" },
   { name: "RAG Pipelines", level: 82, category: "ai", icon: "rag" },
   { name: "Search-Augmented\nLLM Pipelines", level: 80, category: "ai", icon: "searchllm" },
+  { name: "Agentic AI", level: 85, category: "ai", icon: "searchllm" },
+  { name: "Claude", level: 85, category: "ai", icon: "searchllm" },
 
   // DevOps & Tooling
+  { name: "Puppeteer", level: 85, category: "tools", icon: "javascript" },
   { name: "Git", level: 90, category: "tools", icon: "git" },
   { name: "GitHub", level: 90, category: "tools", icon: "github" },
   { name: "Postman", level: 85, category: "tools", icon: "postman" },

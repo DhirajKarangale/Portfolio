@@ -17,12 +17,12 @@ export const ExperienceSection = () => {
       duration: "Aug 2024 - Present",
       location: "India",
       highlights: [
-        "Owned features end-to-end from requirements to deployment",
-        "Built REST APIs with 99.9% uptime",
-        "Reduced backend response time by ~25% using Redis caching",
-        "Improved frontend load time from 3.5s → 2.1s",
+        "Built a React library to export complex dashboards into fully editable PPT and PDF documents, adopted across 7+ projects",
+        "Developed an AI-powered platform transforming meeting transcripts and videos into structured Process Design Documents in under 5 minutes",
+        "Led system design for micro-frontend applications using React and Webpack Module Federation",
+        "Optimized MySQL queries and implemented database indexing, reducing API response times by 25%",
       ],
-      tech: ["React", "Node.js", "Spring Boot", "PostgreSQL", "Redis"],
+      tech: ["React", "Node.js", "Python", "Webpack", "Spring Boot", "MySQL", "AWS"],
       logo: "/experience/infosys.jpg"
     },
     {
@@ -34,10 +34,10 @@ export const ExperienceSection = () => {
       highlights: [
         "Built responsive, multi-user UIs",
         "Integrated Google OAuth 2.0",
-        "Implemented WebSocket-driven live updates",
-        "Reduced bandwidth usage by ~35%",
+        "Implemented WebSocket-driven live updates ensuring real-time state synchronization for 10K+ users",
+        "Integrated JWT authentication and session management workflows to strictly secure application access",
       ],
-      tech: ["React", "Tailwind", "WebSockets", "OAuth"],
+      tech: ["React", "Tailwind", "WebSockets", "OAuth", "JWT"],
       logo: "/experience/saraltech.jpg"
     },
   ];
