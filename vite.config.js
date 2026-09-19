@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import path from "path";
 import prerender from "@prerenderer/rollup-plugin";
-import PuppeteerRenderer from "@prerenderer/renderer-puppeteer";
+import JSDOMRenderer from "@prerenderer/renderer-jsdom";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -12,7 +12,7 @@ export default defineConfig({
     tailwindcss(),
     prerender({
       routes: ['/'],
-      renderer: new PuppeteerRenderer(),
+      renderer: new JSDOMRenderer(),
     }),
   ],
   resolve: {
