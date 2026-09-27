@@ -60,12 +60,15 @@ const skills = [
   { name: "JavaScript", level: 90, category: "frontend", icon: "javascript" },
   { name: "Redux Toolkit", level: 82, category: "frontend", icon: "redux" },
   { name: "React Query", level: 80, category: "frontend", icon: "reactquery" },
+  { name: "React Router", level: 85, category: "frontend", icon: "react" },
+  { name: "React Flow", level: 82, category: "frontend", icon: "react" },
 
   // UI & Styling
   { name: "HTML", level: 90, category: "ui", icon: "html" },
   { name: "CSS", level: 88, category: "ui", icon: "css" },
   { name: "Tailwind CSS", level: 90, category: "ui", icon: "tailwind" },
   { name: "Bootstrap", level: 80, category: "ui", icon: "bootstrap" },
+  { name: "Framer Motion", level: 85, category: "ui", icon: "css" },
 
   // Backend & APIs
   { name: "Node.js", level: 90, category: "backend", icon: "nodejs" },
@@ -76,8 +79,11 @@ const skills = [
   { name: "Socket.IO", level: 85, category: "backend", icon: "socketio" },
   { name: "JWT Authentication", level: 85, category: "backend", icon: "jwt" },
   { name: "OAuth 2.0", level: 80, category: "backend", icon: "oauth" },
+  { name: "Role-Based Access\n(RBAC)", level: 85, category: "backend", icon: "jwt" },
   { name: "Java", level: 85, category: "backend", icon: "java" },
   { name: "Spring Boot", level: 82, category: "backend", icon: "springboot" },
+  { name: "Browser Automation", level: 85, category: "backend", icon: "javascript" },
+  { name: "Web Scraping", level: 85, category: "backend", icon: "python" },
 
   // Databases & Infrastructure
   { name: "PostgreSQL", level: 88, category: "infra", icon: "postgresql" },
@@ -86,15 +92,23 @@ const skills = [
   { name: "SQL", level: 90, category: "infra", icon: "sql" },
   { name: "Redis", level: 82, category: "infra", icon: "redis" },
   { name: "Docker", level: 80, category: "infra", icon: "docker" },
+  { name: "AWS", level: 75, category: "infra", icon: "vercel" },
+  { name: "GCP", level: 75, category: "infra", icon: "vercel" },
 
   // AI / ML Systems
   { name: "Python", level: 85, category: "ai", icon: "python" },
   { name: "LangChain", level: 80, category: "ai", icon: "langchain" },
+  { name: "LangGraph", level: 82, category: "ai", icon: "langchain" },
   { name: "Hugging Face", level: 78, category: "ai", icon: "huggingface" },
   { name: "RAG Pipelines", level: 82, category: "ai", icon: "rag" },
+  { name: "Text-to-SQL", level: 80, category: "ai", icon: "sql" },
+  { name: "LLM Wikis", level: 80, category: "ai", icon: "searchllm" },
+  { name: "OKF", level: 80, category: "ai", icon: "searchllm" },
+  { name: "Centralized AI\nKnowledge Base", level: 82, category: "ai", icon: "rag" },
   { name: "Search-Augmented\nLLM Pipelines", level: 80, category: "ai", icon: "searchllm" },
   { name: "Agentic AI", level: 85, category: "ai", icon: "searchllm" },
   { name: "Claude", level: 85, category: "ai", icon: "searchllm" },
+  { name: "AI Image Verification", level: 85, category: "ai", icon: "searchllm" },
 
   // DevOps & Tooling
   { name: "Puppeteer", level: 85, category: "tools", icon: "javascript" },
@@ -106,6 +120,9 @@ const skills = [
   { name: "Netlify", level: 80, category: "tools", icon: "netlify" },
   { name: "Render", level: 78, category: "tools", icon: "render" },
   { name: "Jenkins", level: 75, category: "tools", icon: "jenkins" },
+  { name: "Stripe API", level: 80, category: "tools", icon: "restapi" },
+  { name: "Nodemailer", level: 80, category: "tools", icon: "nodejs" },
+  { name: "System Design", level: 85, category: "tools", icon: "postgresql" },
 ];
 
 /* ===================== CATEGORIES ===================== */
