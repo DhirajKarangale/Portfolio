@@ -13,31 +13,36 @@ export const ExperienceSection = () => {
     {
       id: 1,
       company: "Infosys",
-      role: "Specialist Programmer — Full-Stack Engineer",
+      role: "Specialist Programmer — Software Development Engineer",
       duration: "Aug 2024 - Present",
-      location: "India",
+      location: "India (On-site)",
       highlights: [
-        "Built a React library to export complex dashboards into fully editable PPT and PDF documents, adopted across 7+ projects",
-        "Developed an AI-powered platform transforming meeting transcripts and videos into structured Process Design Documents in under 5 minutes",
-        "Led system design for micro-frontend applications using React and Webpack Module Federation",
-        "Optimized MySQL queries and implemented database indexing, reducing API response times by 25%",
+        "Built a reusable dashboard export library that converts complex React dashboards into fully editable PowerPoint and PDF documents, adopted across 7+ projects by 3 teams and reducing report creation from hours of manual slide preparation to a single export action.",
+        "Developed an AI-powered PDD generation platform that transforms meeting transcripts and videos into structured Process Design Documents, reducing document creation time from hours or days to under 5 minutes.",
+        "Built a centralized enterprise AI knowledge base using RAG, LLM wikis, and OKF, enabling users to query organizational data and databases via natural language (Text-to-SQL) with strict role-based access control and data privacy.",
+        "Architected and developed micro-frontend applications using React and Webpack Module Federation, enabling independent deployments across teams.",
+        "Developed POCs using Java and Spring Boot, including gRPC-based service communication and integration for backend service development.",
+        "Improved application performance by 25% through MySQL query optimization, database indexing, and REST API improvements.",
+        "Integrated AWS services including S3 and Parameter Store, and GCP services including Cloud SQL, Redis, and Cloud Storage."
       ],
-      tech: ["React", "Node.js", "Python", "Webpack", "Spring Boot", "MySQL", "AWS"],
+      tech: ["React", "Micro-frontends", "Node.js", "Python", "Java", "Spring Boot", "Backend", "RAG", "LLM Wikis", "OKF", "Text-to-SQL", "gRPC", "MySQL", "AWS", "GCP"],
       logo: "/experience/infosys.jpg"
     },
     {
       id: 2,
-      company: "SaralTech",
-      role: "Junior Programmer — Frontend Developer",
+      company: "Saral Group",
+      role: "Developer Intern",
       duration: "Jan 2024 - Jun 2024",
-      location: "Remote",
+      location: "Bangalore (Remote)",
       highlights: [
-        "Built responsive, multi-user UIs",
-        "Integrated Google OAuth 2.0",
-        "Implemented WebSocket-driven live updates ensuring real-time state synchronization for 10K+ users",
-        "Integrated JWT authentication and session management workflows to strictly secure application access",
+        "Architected and developed responsive, mobile-first user interfaces using React and Tailwind CSS, significantly improving cross-device accessibility.",
+        "Integrated Mattermost WebSockets to power real-time messaging, live UI updates, and seamless cross-client state synchronization for active users.",
+        "Designed and implemented secure JWT-based authentication alongside secure session management practices to protect sensitive user access.",
+        "Integrated Google OAuth 2.0 to provide seamless, secure third-party authentication and streamline user onboarding.",
+        "Collaborated with backend engineers to integrate scalable REST APIs, optimizing data fetching workflows and reducing unnecessary frontend re-renders.",
+        "Participated in agile workflows, code reviews, and UI/UX design discussions to consistently deliver production-ready features."
       ],
-      tech: ["React", "Tailwind", "WebSockets", "OAuth", "JWT"],
+      tech: ["React", "Tailwind", "WebSockets", "OAuth", "JWT", "REST APIs", "Agile"],
       logo: "/experience/saraltech.jpg"
     },
   ];
@@ -180,7 +185,11 @@ export const ExperienceSection = () => {
           </motion.div>
 
           <div className="relative">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <div className={`grid grid-cols-1 gap-6 sm:gap-8 mx-auto ${
+              visibleExperiences.length === 1 ? 'max-w-xl' :
+              visibleExperiences.length === 2 ? 'md:grid-cols-2 max-w-4xl' :
+              'sm:grid-cols-2 lg:grid-cols-3'
+            }`}>
               {visibleExperiences.map((experience) => (
                 <motion.div
                   key={experience.id}
@@ -188,12 +197,11 @@ export const ExperienceSection = () => {
                   variants={itemVariants}
                   whileHover={{ y: -5 }}
                 >
-                  <div className="relative inline-block mb-3">
+                  <div className="relative inline-flex mb-5 h-[3.5rem] sm:h-[4rem]">
                     <h3 className="font-semibold text-left text-lg text-foreground">
                       {experience.role}
                     </h3>
-                    <span className="absolute left-0 -bottom-1 w-full h-[2px]
-                   bg-gradient-to-r from-primary to-purple-500 rounded-full" />
+                    <span className="absolute left-0 -bottom-2 w-full h-[2px] bg-gradient-to-r from-primary to-purple-500 rounded-full" />
                   </div>
 
                   <div className="flex flex-col h-full">

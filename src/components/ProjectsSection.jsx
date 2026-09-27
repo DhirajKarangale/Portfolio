@@ -14,7 +14,8 @@ const projects = [
     gif: "/projects/jobora_gif.gif",
     tags: [
       "Agentic AI",
-      "LangChain",
+      'LangChain',
+      "LangGraph",
       "Puppeteer",
       "PostgreSQL",
       "Redis",
@@ -126,7 +127,7 @@ const projects = [
   {
     id: 4,
     title: "FUSE",
-    category: "Real-time Systems",
+    category: "Real-Time Systems",
     description:
       "FUSE is a modern, interest-based social media platform designed to promote high-quality content discovery and real-time interaction. The platform organizes content into predefined creative categories such as UI/UX, Game Design, 2D/3D Art, and Animation, ensuring relevance and reducing feed noise.\n\nUsers can personalize their experience by selecting categories of interest, resulting in a curated feed that surfaces only relevant posts. A trending section highlights high-engagement content across all categories, while real-time messaging enables seamless text and image communication between users.\n\nThe system leverages WebSockets for instant message delivery and Cloudinary for optimized media handling. Built with a mobile-first mindset, FUSE delivers a smooth, responsive UI enhanced with Framer Motion animations, making it a polished example of a real-time, user-centric social platform.",
     image: "/projects/fuse_logo.png",
@@ -219,11 +220,13 @@ const projects = [
     gif: "/projects/consentmanagement_logo.png",
     tags: [
       "React",
+      "Java",
+      "Spring Boot",
+      "PostgreSQL",
       "Role-Based Access",
       "DPDP Act 2023",
       "React Query",
-      "Redux Toolkit",
-      "Product Engineering"
+      "Redux Toolkit"
     ],
     demoUrl: null,
     githubUrl: "https://github.com/DhirajKarangale/ConsentManagement",
@@ -234,8 +237,8 @@ const projects = [
       "Designed a consent workflow aligned with India’s DPDP Act, 2023",
       "Implemented role-based access control across four distinct user types",
       "Built responsive and accessible UIs using Bootstrap and custom components",
-      "Integrated React Query for efficient data fetching and caching",
-      "Optimized performance using lazy loading, code splitting, and Redux Toolkit"
+      "Developed backend REST APIs using Java Spring Boot with Spring Security",
+      "Managed consent lifecycle and audit operations using Spring Data JPA and PostgreSQL"
     ]
   },
   {

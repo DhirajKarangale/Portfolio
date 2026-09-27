@@ -16,14 +16,16 @@ export const AboutSection = () => {
 
   const techStack = [
     {
-      category: "Frontend & UX",
+      category: "Frontend & Architecture",
       items: [
         "React",
         "TypeScript",
         "JavaScript",
         "Redux Toolkit",
         "React Query",
+        "React Router & React Flow",
         "Tailwind CSS",
+        "Bootstrap",
         "Framer Motion",
         "Webpack Module Federation",
         "Micro-frontends"
@@ -33,26 +35,35 @@ export const AboutSection = () => {
       category: "Backend & Systems",
       items: [
         "Node.js",
-        "Express",
+        "Express.js",
         "FastAPI",
         "Java",
         "Spring Boot",
         "REST APIs",
         "WebSockets",
+        "Browser Automation",
+        "Web Scraping",
         "JWT & Auth Flows",
-        "Redis (cache, streams)"
+        "Role-Based Access Control (RBAC)"
       ],
     },
     {
-      category: "AI, Data & Infra",
+      category: "AI, Cloud & Data",
       items: [
         "Python",
+        "Agentic AI & LLMs",
+        "LangChain & LangGraph",
         "RAG Pipelines",
-        "LangChain",
-        "Agentic AI",
-        "Hugging Face Models",
-        "PostgreSQL",
-        "Docker",
+        "Claude & Hugging Face",
+        "Text-to-SQL",
+        "LLM wikis & OKF",
+        "Centralized AI Knowledge Base",
+        "AI Image Verification",
+        "PostgreSQL & MySQL",
+        "Redis (cache, streams)",
+        "MongoDB",
+        "AWS & GCP",
+        "Docker & Jenkins",
         "Vercel / Render"
       ],
     },

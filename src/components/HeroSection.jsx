@@ -91,7 +91,7 @@ export const HeroSection = () => {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-br from-background via-background/95 to-primary/10" ref={ref}>
+    <section id="hero" className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 overflow-hidden bg-gradient-to-br from-background via-background/95 to-primary/10" ref={ref}>
 
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute inset-0 opacity-30">
@@ -186,7 +186,7 @@ export const HeroSection = () => {
 
             <motion.div className="mt-6 text-center lg:text-left" variants={{ hidden: { y: 30, opacity: 0 }, visible: { y: 0, opacity: 1, transition: { duration: 0.8 } } }}>
               <div className="text-sm text-muted-foreground">
-                🚀 Open to <span className="text-primary font-semibold">Full-Stack, Backend & Java / Spring Boot</span> roles
+                🚀 Open to <span className="text-primary font-semibold">Agentic AI, AI Engineering, Full-Stack & SDE</span> roles
               </div>
             </motion.div>
           </div>
